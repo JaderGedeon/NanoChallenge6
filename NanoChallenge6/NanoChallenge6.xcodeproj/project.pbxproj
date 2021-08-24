@@ -13,6 +13,7 @@
 		856928FA26D56EC300FBD178 /* GridList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F926D56EC300FBD178 /* GridList.swift */; };
 		856928FC26D571AB00FBD178 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FB26D571AB00FBD178 /* CardList.swift */; };
 		856928FE26D5804600FBD178 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FD26D5804600FBD178 /* CardButton.swift */; };
+		8569290126D587A200FBD178 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8569290026D587A200FBD178 /* ItemView.swift */; };
 		85929C2B26D441150072D80E /* NanoChallenge6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85929C2A26D441150072D80E /* NanoChallenge6App.swift */; };
 		85929C2D26D441150072D80E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85929C2C26D441150072D80E /* ContentView.swift */; };
 		85929C2F26D441170072D80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85929C2E26D441170072D80E /* Assets.xcassets */; };
@@ -30,6 +31,10 @@
 		856928FB26D571AB00FBD178 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		856928FD26D5804600FBD178 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
 
+
+
+		8569290026D587A200FBD178 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+        87da381 (Adiciona tela modal de adicionar item)
 		85929C2726D441150072D80E /* NanoChallenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85929C2A26D441150072D80E /* NanoChallenge6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6App.swift; sourceTree = "<group>"; };
 		85929C2C26D441150072D80E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +67,14 @@
 			path = "Home Screen";
 			sourceTree = "<group>";
 		};
+		856928FF26D5878200FBD178 /* Item View */ = {
+			isa = PBXGroup;
+			children = (
+				8569290026D587A200FBD178 /* ItemView.swift */,
+			);
+			path = "Item View";
+			sourceTree = "<group>";
+		};
 		85929C1E26D441150072D80E = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +94,7 @@
 		85929C2926D441150072D80E /* NanoChallenge6 */ = {
 			isa = PBXGroup;
 			children = (
+				856928FF26D5878200FBD178 /* Item View */,
 				856928F626D56B5600FBD178 /* Home Screen */,
 				85929C2A26D441150072D80E /* NanoChallenge6App.swift */,
 				85929C2C26D441150072D80E /* ContentView.swift */,
@@ -177,6 +191,7 @@
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
 				856928FA26D56EC300FBD178 /* GridList.swift in Sources */,
 				856928F826D56B6A00FBD178 /* HomeScreen.swift in Sources */,
+				8569290126D587A200FBD178 /* ItemView.swift in Sources */,
 				85929C3426D441170072D80E /* Persistence.swift in Sources */,
 				16EE775426D56B6700F131FA /* ListView.swift in Sources */,
 				85929C2D26D441150072D80E /* ContentView.swift in Sources */,
