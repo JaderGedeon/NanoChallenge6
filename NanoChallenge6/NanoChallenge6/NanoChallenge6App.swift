@@ -13,8 +13,7 @@ struct NanoChallenge6App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ListView()
         }
     }
 }
