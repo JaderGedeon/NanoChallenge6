@@ -107,12 +107,12 @@ struct HeaderView: View {
 
 struct CheckBoxView: View {
     
-    var marked: Bool
+    @State var marked: Bool
     
     var body: some View {
         
         Button(action: {
-            print("button pressed")
+            marked.toggle()
         }) {
             
             Image(systemName: (marked ? "checkmark.square.fill" : "square"))
