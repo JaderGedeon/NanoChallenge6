@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
+		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
 		856928F826D56B6A00FBD178 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* HomeScreen.swift */; };
 		856928FA26D56EC300FBD178 /* GridList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F926D56EC300FBD178 /* GridList.swift */; };
 		856928FC26D571AB00FBD178 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FB26D571AB00FBD178 /* CardList.swift */; };
@@ -20,10 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		856928F726D56B6A00FBD178 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		856928F926D56EC300FBD178 /* GridList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridList.swift; sourceTree = "<group>"; };
 		856928FB26D571AB00FBD178 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		856928FD26D5804600FBD178 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
+
 		85929C2726D441150072D80E /* NanoChallenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85929C2A26D441150072D80E /* NanoChallenge6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6App.swift; sourceTree = "<group>"; };
 		85929C2C26D441150072D80E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 				85929C3826D441170072D80E /* Info.plist */,
 				85929C3526D441170072D80E /* NanoChallenge6.xcdatamodeld */,
 				85929C3026D441170072D80E /* Preview Content */,
+				16EE775326D56B6700F131FA /* ListView.swift */,
+				16EE775526D6612C00F131FA /* ConfigurationView.swift */,
 			);
 			path = NanoChallenge6;
 			sourceTree = "<group>";
@@ -165,10 +173,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */,
+				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
 				856928FA26D56EC300FBD178 /* GridList.swift in Sources */,
 				856928F826D56B6A00FBD178 /* HomeScreen.swift in Sources */,
 				85929C3426D441170072D80E /* Persistence.swift in Sources */,
+				16EE775426D56B6700F131FA /* ListView.swift in Sources */,
 				85929C2D26D441150072D80E /* ContentView.swift in Sources */,
 				85929C2B26D441150072D80E /* NanoChallenge6App.swift in Sources */,
 				856928FC26D571AB00FBD178 /* CardList.swift in Sources */,
@@ -301,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = CFSW3AA3PQ;
+				DEVELOPMENT_TEAM = YHY9LU893D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -323,7 +333,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = CFSW3AA3PQ;
+				DEVELOPMENT_TEAM = YHY9LU893D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
