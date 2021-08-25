@@ -83,13 +83,12 @@ struct ListConfigurations: View {
                 .foregroundColor(Color("CorzinhaManeira"))
             
             TextEditor(text: $descriptionText)
-                .background(Color("Cinzinha"))
                 .foregroundColor(Color("CorDoBalacobaco"))
-                .frame(width: 100, height: 140 / 3, alignment: .center)
-                .lineSpacing(10)
                 .autocapitalization(.words)
                 .disableAutocorrection(true)
-                .padding()
+                .padding(.all, 20)
+                .background(Color("Cinzinha"))
+                .cornerRadius(10)
         }
         .padding()
     }
