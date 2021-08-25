@@ -88,11 +88,10 @@ struct HeaderView: View {
         VStack(alignment: .leading){
             
             Text(title)
-                .fontWeight(.bold)
                 .foregroundColor(Color("CorzinhaManeira"))
                 .padding(.horizontal)
                 .padding(.top)
-                .font(.largeTitle)
+                .font(.system(size: 28, weight: .bold))
             
             Text(subtitle)
                 .padding(.horizontal)
