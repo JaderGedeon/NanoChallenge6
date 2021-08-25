@@ -44,9 +44,28 @@ struct ListView: View {
             LazyVStack() {
                 
                 ForEach(ListItemData) { item in
-                    ListRowView(item: item)
+                    HStack(alignment: .top, spacing: 13){
+                        
+                        CheckBoxView(marked: item.check)
+                        
+                        VStack(alignment: .leading) {
+                            
+                            Text(item.name)
+                                .fontWeight(.bold)
+                            
+                            Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
+                                .foregroundColor(Color("CorzinhaShow"))
+                            
+                        }
+                        .padding(.top, 3)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .background(Color("CorzinhaManeira2"))
+                    .cornerRadius(10)
+                    .padding(.vertical, 1)
+                    .padding(.horizontal)
                 }
-                
                 AddItemView()
             }
         }
@@ -86,45 +105,25 @@ struct HeaderView: View {
     }
 }
 
-struct ListRowView: View {
+struct CheckBoxView: View {
     
-    var item: ListItem
+    var marked: Bool
     
     var body: some View {
         
-        HStack(alignment: .top){
+        Button(action: {
+            print("button pressed")
+        }) {
             
-            Button(action: {
-                print("button pressed")
-            }) {
-                
-                Image(systemName: (item.check ? "checkmark.square.fill" : "square"))
-                    .renderingMode(.template)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 46, height: 46, alignment: .top)
-                    .foregroundColor(Color("CorzinhaManeira"))
-                
-            }
-            .buttonStyle(PlainButtonStyle())
+            Image(systemName: (marked ? "checkmark.square.fill" : "square"))
+                .renderingMode(.template)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 46, height: 46, alignment: .top)
+                .foregroundColor(Color("CorzinhaManeira"))
             
-            VStack(alignment: .leading) {
-                
-                Text(item.name)
-                    .fontWeight(.bold)
-                
-                Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
-                    .foregroundColor(Color("CorzinhaShow"))
-                
-            }
-            .padding(.top, 3)
         }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .topLeading)
-        .background(Color("CorzinhaManeira2"))
-        .cornerRadius(10)
-        .padding(.vertical, 1)
-        .padding(.horizontal)
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
