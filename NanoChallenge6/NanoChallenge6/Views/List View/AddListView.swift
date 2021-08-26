@@ -8,24 +8,33 @@
 import SwiftUI
 
 struct AddListView: View {
+    @EnvironmentObject var listManager: ListManager
+    
     init() {
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-            UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
+        setNavigationBarAppearance()
     }
     
     // mostrar lista recém criada
-    var list = ListRecord(name: "Nova Lista", description: "Descrição")
+    @State var list = ListRecord(name: "", description: "")
     
     var body: some View {
         ScrollView {
-            ListHeaderView(list: ListRecord(name: "Nova Lista", description: ""))
+            ListHeaderView(list: $list)
             AddListItemView()
             
         }// scroll
         .navigationBarTitle("", displayMode: .inline)
+        .onDisappear(perform: {
+            listManager.addNewList(newList: list)
+        })
      
     } // body
+    
+    func setNavigationBarAppearance() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
+    }
 }
 
 struct AddListView_Previews: PreviewProvider {

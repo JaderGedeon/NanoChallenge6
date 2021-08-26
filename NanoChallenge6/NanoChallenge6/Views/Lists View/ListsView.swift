@@ -13,20 +13,11 @@ enum Tab {
 }
 
 struct ListsView: View {
-    @EnvironmentObject var listManager: ListManager
-    
     init() {
-        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primary")
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "secondary")!], for: .selected)
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "primary")!], for: .normal)
-        UISegmentedControl.appearance().backgroundColor = UIColor(named: "secondary")
-        UISegmentedControl.appearance().isOpaque = true
+        setSegmentedControlAppearance()
     }
     
-    var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 135, maximum: 500)), count: 2)
-
-    var individualList = [ListRecord(name: "individual", description: "")]
-    var sharedList = [ListRecord(name: "compartilhada", description: "")]
+    @EnvironmentObject var listManager: ListManager
     
     @State var selectedTab: Tab = Tab.all
     
@@ -57,19 +48,28 @@ struct ListsView: View {
                     // apresenta o conjunto específico de lista de cada tab
                     switch selectedTab {
                     case .all:
-                        CardGrid(lists: listManager.allLists)
+                        CardGrid(lists: listManager.allLists, listManager: listManager)
                     case .individual:
-                        CardGrid(lists: individualList)
+                        CardGrid(lists: listManager.individualList, listManager: listManager)
                     default:
-                        CardGrid(lists: sharedList)
+                        CardGrid(lists: listManager.sharedList, listManager: listManager)
                     }
 
                 }
             }.padding()
             .navigationBarHidden(true)
-        }
+        }.onAppear(perform: {
+            listManager.fetchList()
+        })
     }
 
+    func setSegmentedControlAppearance() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primary")
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "secondary")!], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "primary")!], for: .normal)
+        UISegmentedControl.appearance().backgroundColor = UIColor(named: "secondary")
+        UISegmentedControl.appearance().isOpaque = true
+    }
 }
 
 struct HomeScreen_Previews: PreviewProvider {

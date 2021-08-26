@@ -10,9 +10,7 @@ import SwiftUI
 struct AddListItemView: View {
     
     @State var item = ListItem(check: false, image: nil, name: "", description: "", quantity: 6, measurement: .unit)
-    
-    @State var showItemForm: Bool = false
-    
+        
     var body: some View {
         HStack(alignment: .top, spacing: 13){
             
@@ -21,17 +19,7 @@ struct AddListItemView: View {
             TextField("Novo item", text: $item.name)
                 .font(.headline.bold())
                 .padding(.top, 10)
-            
 
-            Button(action: { showItemForm.toggle() }, label: {
-                Image(systemName: "info.circle")
-                    .foregroundColor(Color("primary"))
-                    .font(.title)
-            })
-            .padding(.top, 8)
-            .sheet(isPresented: $showItemForm, content: {
-                ItemView()
-            })
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .topLeading)

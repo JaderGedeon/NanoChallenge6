@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CardList: View {
     var list: ListRecord
     

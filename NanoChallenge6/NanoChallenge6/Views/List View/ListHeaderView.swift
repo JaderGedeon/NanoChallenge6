@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListHeaderView: View {
     
-    @State var list: ListRecord
+    @Binding var list: ListRecord
     
     var body: some View {
         
@@ -31,8 +31,8 @@ struct ListHeaderView: View {
     }
 }
 
-struct ListHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListHeaderView(list: ListRecord(name: "Nova Lista", description: ""))
-    }
-}
+//struct ListHeaderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListHeaderView(list: ListRecord(name: "Nova Lista", description: ""))
+//    }
+//}

@@ -67,13 +67,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		851A8CF826D842C3006A6207 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				85C0190B26D7CC0500703850 /* CardGrid.swift */,
+				856928FB26D571AB00FBD178 /* CardList.swift */,
+				856928FD26D5804600FBD178 /* CardButton.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		856928F626D56B5600FBD178 /* Lists View */ = {
 			isa = PBXGroup;
 			children = (
 				856928F726D56B6A00FBD178 /* ListsView.swift */,
-				856928FB26D571AB00FBD178 /* CardList.swift */,
-				856928FD26D5804600FBD178 /* CardButton.swift */,
-				85C0190B26D7CC0500703850 /* CardGrid.swift */,
+				851A8CF826D842C3006A6207 /* Subviews */,
 			);
 			path = "Lists View";
 			sourceTree = "<group>";

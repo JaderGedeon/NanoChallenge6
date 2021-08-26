@@ -41,10 +41,10 @@ class CKManager {
     }
     
     // MARK: teste save do CKRecord no CloudKit
-    func saveList() {
+    func saveList(list: ListRecord) {
         
         let oizinho = CKRecord.init(recordType: "Lists")
-        oizinho.setObject("ListaDeMercado" as __CKRecordObjCValue, forKey: "name")
+        oizinho.setObject(list.name as __CKRecordObjCValue, forKey: "name")
         
         container.save(oizinho, completionHandler: { (record, error) in
 //
