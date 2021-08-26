@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CardList: View {
-    var text: String
+    var list: ListRecord
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 25.0)
                 .fill()
                 .foregroundColor(Color("primary"))
                 .frame(minWidth: 0, idealWidth: 135, maxWidth: .infinity, minHeight: 0, idealHeight: 190, maxHeight: .infinity, alignment: .center)
@@ -21,7 +21,7 @@ struct CardList: View {
                     .fill()
                     .foregroundColor(Color("secondary"))
                     .frame(minWidth: 0, idealWidth: 60, maxWidth: 135, minHeight: 0, idealHeight: 110, maxHeight: 190, alignment: .center)
-                Text(text)
+                Text(list.name)
                     .padding()
                     
             }
@@ -34,6 +34,6 @@ struct CardList: View {
 
 struct CardList_Previews: PreviewProvider {
     static var previews: some View {
-        CardList(text: "oi")
+        CardList(list: ListRecord(name: "1", description: ""))
     }
 }

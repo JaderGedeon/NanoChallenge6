@@ -24,10 +24,11 @@ struct ListsView: View {
     }
     
     @State private var showItemForm = false
-    
     var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 135, maximum: 500)), count: 2)
-    
-    var lists = [ListRecord]()
+
+    var lists = [ListRecord(name: "individual", description: ""), ListRecord(name: "compartilhada", description: "")]
+    var individualList = [ListRecord(name: "individual", description: "")]
+    var sharedList = [ListRecord(name: "compartilhada", description: "")]
     
     @State var selectedTab: Tab = Tab.all
     
@@ -53,29 +54,26 @@ struct ListsView: View {
                     Text("Compartilhadas")
                         .tag(Tab.shared)
                 }.pickerStyle(SegmentedPickerStyle()).foregroundColor(Color("primary"))
-                
+
                 ScrollView {
-                    LazyVGrid(columns: columns, alignment: .center, spacing: 20){
-                        ForEach(0..<lists.count) { list in
-                            NavigationLink(destination: ListView()) {
-                                CardList(text: "lista")
-                            }
-                        }
-                        NavigationLink(destination: AddListView()) {
-                            CardButton()
-                        }
+                    // apresenta o conjunto específico de lista de cada tab
+                    switch selectedTab {
+                    case .all:
+                        CardGrid(lists: lists)
+                    case .individual:
+                        CardGrid(lists: individualList)
+                    default:
+                        CardGrid(lists: sharedList)
                     }
+
                 }
                 Spacer()
             }.padding()
             .navigationBarHidden(true)
         }
-        
-        
-        
     }
     
-    func addItem() {
+    func addList() {
         print("add")
         showItemForm = true
     }
