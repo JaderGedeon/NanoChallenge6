@@ -69,6 +69,7 @@ struct ListsView: View {
             .navigationBarHidden(true)
         }
     }
+
 }
 
 struct HomeScreen_Previews: PreviewProvider {

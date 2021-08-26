@@ -20,7 +20,7 @@ class CKManager {
     let container = CKContainer(identifier: "iCloud.Nano6").publicCloudDatabase
     
     // MARK: teste fetch do container do CloudKit
-    func fetchListsOther(completion: @escaping ( [CKRecord] ) -> () ) {
+    func fetchList(completion: @escaping ( [CKRecord] ) -> () ) {
         
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Lists", predicate: predicate)
@@ -28,7 +28,7 @@ class CKManager {
         let operation = CKQueryOperation(query: query)
         
         var itemRecords: [CKRecord] = []
-
+        
         operation.recordFetchedBlock = { record in
             itemRecords.append(record)
         }
@@ -38,6 +38,31 @@ class CKManager {
         }
         
         container.add(operation)
+    }
+    
+    // MARK: teste save do CKRecord no CloudKit
+    func saveList() {
+        
+        let oizinho = CKRecord.init(recordType: "Lists")
+        oizinho.setObject("ListaDeMercado" as __CKRecordObjCValue, forKey: "name")
+        
+        container.save(oizinho, completionHandler: { (record, error) in
+//
+//            if error != nil {
+//                print("There was an error \(error!)")
+//            }
+            
+        })
+    }
+    
+    func deleteList(recordID : CKRecord.ID) {
+
+        container.delete(withRecordID: recordID, completionHandler: { (record, error) in } )
+        
+    }
+    
+    func modifyList() {
+        
     }
 }
 
