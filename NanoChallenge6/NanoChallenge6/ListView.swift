@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CloudKit
 
 enum UnitMeasurement: String {
     case unit = "Uni"
@@ -130,9 +131,7 @@ struct AddItemView: View {
     
     var body: some View {
         
-        Button(action: {
-            print("New Item")
-        }) {
+        Button(action: BaixarBanco) {
             
             Image(systemName: "plus.square")
                 .renderingMode(.template)
@@ -148,5 +147,28 @@ struct AddItemView: View {
         .cornerRadius(10)
         .padding(.vertical,1)
         .padding(.horizontal)
+    }
+    
+    func BaixarBanco(){
+        
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: "Item", predicate: predicate)
+        let operation = CKQueryOperation(query: query)
+        
+        var itemRecords: [CKRecord] = []
+
+        operation.recordFetchedBlock = { record in
+            itemRecords.append(record)
+        }
+
+        operation.queryCompletionBlock = { cursor, error in
+            for record in itemRecords {
+                print(record.object(forKey: "name") ?? "unknown")
+                print("foi")
+            }
+        }
+
+        CKContainer(identifier: "iCloud.testezinhobacanaeshow").publicCloudDatabase.add(operation)
+        print("eae")
     }
 }

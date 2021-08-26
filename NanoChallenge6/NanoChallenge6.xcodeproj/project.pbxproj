@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16CA9AAA26D6DBAB0074D024 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CA9AA926D6DBAB0074D024 /* CloudKit.framework */; };
 		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
 		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
 		856928F826D56B6A00FBD178 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* HomeScreen.swift */; };
@@ -23,16 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
+		16CA9AA726D6DBA90074D024 /* NanoChallenge6.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NanoChallenge6.entitlements; sourceTree = "<group>"; };
+		16CA9AA926D6DBAB0074D024 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		856928F726D56B6A00FBD178 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		856928F926D56EC300FBD178 /* GridList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridList.swift; sourceTree = "<group>"; };
 		856928FB26D571AB00FBD178 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		856928FD26D5804600FBD178 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
-
-
-
 		8569290026D587A200FBD178 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		85929C2726D441150072D80E /* NanoChallenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85929C2A26D441150072D80E /* NanoChallenge6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6App.swift; sourceTree = "<group>"; };
@@ -49,12 +48,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CA9AAA26D6DBAB0074D024 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16CA9AA826D6DBAB0074D024 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16CA9AA926D6DBAB0074D024 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		856928F626D56B5600FBD178 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +87,7 @@
 			children = (
 				85929C2926D441150072D80E /* NanoChallenge6 */,
 				85929C2826D441150072D80E /* Products */,
+				16CA9AA826D6DBAB0074D024 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +102,7 @@
 		85929C2926D441150072D80E /* NanoChallenge6 */ = {
 			isa = PBXGroup;
 			children = (
+				16CA9AA726D6DBA90074D024 /* NanoChallenge6.entitlements */,
 				856928FF26D5878200FBD178 /* Item View */,
 				856928F626D56B5600FBD178 /* Home Screen */,
 				85929C2A26D441150072D80E /* NanoChallenge6App.swift */,
@@ -323,6 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
 				DEVELOPMENT_TEAM = YHY9LU893D;
@@ -333,7 +344,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6;
+				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6z;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
 				DEVELOPMENT_TEAM = YHY9LU893D;
@@ -355,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6;
+				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6z;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
