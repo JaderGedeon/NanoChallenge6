@@ -6,28 +6,16 @@
 //
 
 import SwiftUI
-
-enum UnitMeasurement: String {
-    case unit = "Uni"
-    case millilitre = "mL"
-    case litre = "litros"
-    case gram = "g"
-    case kilogram = "Kg"
-}
-
-struct ListItem: Identifiable {
-    
-    var id = UUID()
-    var check: Bool
-    var image: Image?
-    var name: String
-    var description: String
-    var quantity: Int
-    var measurement: UnitMeasurement
-    
-}
+import CloudKit
 
 struct ListView: View {
+    var items = [CKRecord]()
+    
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
+    }
     
     @State var ListItemData = [
         ListItem(check: true, image: nil, name: "Guaraná 2L", description: "", quantity: 6, measurement: .litre),
@@ -35,40 +23,41 @@ struct ListView: View {
     ]
     
     var body: some View {
-        
-        ScrollView {
-            
-            HeaderView(title: "Lista 1",
-                       subtitle: "Lista do rolê de sexta")
-            
-            LazyVStack() {
+            ScrollView {
                 
-                ForEach(ListItemData) { item in
-                    HStack(alignment: .top, spacing: 13){
-                        
-                        CheckBoxView(marked: item.check)
-                        
-                        VStack(alignment: .leading) {
+                HeaderView(title: "Lista 1",
+                           subtitle: "Lista do rolê de sexta")
+                
+                LazyVStack() {
+                    
+                    ForEach(ListItemData) { item in
+                        HStack(alignment: .top, spacing: 13){
                             
-                            Text(item.name)
-                                .fontWeight(.bold)
+                            CheckBoxView(marked: item.check)
                             
-                            Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
-                                .foregroundColor(Color("CorzinhaShow"))
-                            
+                            VStack(alignment: .leading) {
+                                
+                                Text(item.name)
+                                    .fontWeight(.bold)
+                                
+                                Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
+                                    .foregroundColor(Color("CorzinhaShow"))
+                                
+                            }
+                            .padding(.top, 3)
                         }
-                        .padding(.top, 3)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .background(Color("CorzinhaManeira2"))
+                        .cornerRadius(10)
+                        .padding(.vertical, 1)
+                        .padding(.horizontal)
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .background(Color("CorzinhaManeira2"))
-                    .cornerRadius(10)
-                    .padding(.vertical, 1)
-                    .padding(.horizontal)
+                    AddItemView()
                 }
-                AddItemView()
+                
             }
-        }
+            .navigationBarTitle("", displayMode: .inline)
     }
 }
 
@@ -90,7 +79,7 @@ struct HeaderView: View {
             Text(title)
                 .foregroundColor(Color("CorzinhaManeira"))
                 .padding(.horizontal)
-                .padding(.top)
+//                .padding(.top)
                 .font(.system(size: 28, weight: .bold))
             
             Text(subtitle)
@@ -149,4 +138,26 @@ struct AddItemView: View {
         .padding(.vertical,1)
         .padding(.horizontal)
     }
+}
+
+
+
+enum UnitMeasurement: String {
+    case unit = "Uni"
+    case millilitre = "mL"
+    case litre = "litros"
+    case gram = "g"
+    case kilogram = "Kg"
+}
+
+struct ListItem: Identifiable {
+    
+    var id = UUID()
+    var check: Bool
+    var image: Image?
+    var name: String
+    var description: String
+    var quantity: Int
+    var measurement: UnitMeasurement
+    
 }
