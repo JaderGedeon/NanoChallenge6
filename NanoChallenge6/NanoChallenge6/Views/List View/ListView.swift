@@ -13,7 +13,7 @@ struct ListView: View {
     
     init() {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-            UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().shadowImage = UIImage()
         UINavigationBar.appearance().tintColor = UIColor(named: "primary")
     }
     
@@ -23,47 +23,50 @@ struct ListView: View {
     ]
     
     var body: some View {
-            ScrollView {
+        ScrollView {
+            
+            HeaderView(title: "Lista 1",
+                       subtitle: "Lista do rolê de sexta")
+            
+            LazyVStack() {
                 
-                HeaderView(title: "Lista 1",
-                           subtitle: "Lista do rolê de sexta")
-                
-                LazyVStack() {
-                    
-                    ForEach(ListItemData) { item in
-                        HStack(alignment: .top, spacing: 13){
+                ForEach(ListItemData) { item in
+                    HStack(alignment: .top, spacing: 13){
+                        
+                        CheckBoxView(marked: item.check)
+                        
+                        VStack(alignment: .leading) {
                             
-                            CheckBoxView(marked: item.check)
+                            Text(item.name)
+                                .fontWeight(.bold)
                             
-                            VStack(alignment: .leading) {
-                                
-                                Text(item.name)
-                                    .fontWeight(.bold)
-                                
-                                Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
-                                    .foregroundColor(Color("CorzinhaShow"))
-                                
-                            }
-                            .padding(.top, 3)
+                            Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
+                                .foregroundColor(Color("textColor"))
+                            
                         }
-                        .padding()
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .background(Color("CorzinhaManeira2"))
-                        .cornerRadius(10)
-                        .padding(.vertical, 1)
-                        .padding(.horizontal)
+                        .padding(.top, 3)
                     }
-                    AddItemView()
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .background(Color("rowBackgroundColor"))
+                    .cornerRadius(10)
+                    .padding(.vertical, 1)
+                    .padding(.horizontal)
                 }
-                
+                AddItemView()
             }
-            .navigationBarTitle("", displayMode: .inline)
+            
+        }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        
+        ForEach(ColorScheme.allCases, id: \.self) {
+            ListView().preferredColorScheme($0)
+        }
     }
 }
 
@@ -77,16 +80,16 @@ struct HeaderView: View {
         VStack(alignment: .leading){
             
             Text(title)
-                .foregroundColor(Color("CorzinhaManeira"))
+                .foregroundColor(Color("primary"))
                 .padding(.horizontal)
-//                .padding(.top)
+                //                .padding(.top)
                 .font(.system(size: 28, weight: .bold))
             
             Text(subtitle)
                 .padding(.horizontal)
                 .padding(.vertical, 2)
                 .padding(.bottom, 15)
-                .foregroundColor(Color("CorzinhaShow"))
+                .foregroundColor(Color("textColor"))
             
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -108,7 +111,7 @@ struct CheckBoxView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 46, height: 46, alignment: .top)
-                .foregroundColor(Color("CorzinhaManeira"))
+                .foregroundColor(Color("primary"))
             
         }
         .buttonStyle(PlainButtonStyle())
@@ -128,12 +131,12 @@ struct AddItemView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 46, height: 46, alignment: .center)
-                .foregroundColor(Color("CorzinhaManeira"))
+                .foregroundColor(Color("primary"))
             
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .topLeading)
-        .background(Color("CorzinhaManeira2"))
+        .background(Color("rowBackgroundColor"))
         .cornerRadius(10)
         .padding(.vertical,1)
         .padding(.horizontal)

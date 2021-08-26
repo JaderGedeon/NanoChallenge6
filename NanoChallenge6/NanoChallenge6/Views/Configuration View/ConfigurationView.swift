@@ -31,7 +31,7 @@ struct ConfigurationView: View {
                                 Text("Editar compartilhamento")
                                     .frame(maxWidth: .infinity, alignment: .topLeading)
                                     .padding()
-                                    .background(Color("Cinzinha"))
+                                    .background(Color("sectionBackgroundColor"))
                                     .foregroundColor(Color("CorDoBalacobaco"))
                                 Divider()
                             }
@@ -57,7 +57,9 @@ struct ConfigurationView: View {
 
 struct ConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfigurationView()
+        ForEach(ColorScheme.allCases, id: \.self) {
+            ConfigurationView().preferredColorScheme($0)
+        }
     }
 }
 
@@ -80,14 +82,14 @@ struct ListConfigurations: View {
             
             Text("Lista 1")
                 .font(.system(size: 28, weight: .semibold))
-                .foregroundColor(Color("CorzinhaManeira"))
+                .foregroundColor(Color("primary"))
             
             TextEditor(text: $descriptionText)
                 .foregroundColor(Color("CorDoBalacobaco"))
                 .autocapitalization(.words)
                 .disableAutocorrection(true)
                 .padding(.all, 20)
-                .background(Color("Cinzinha"))
+                .background(Color("textFieldBackground"))
                 .cornerRadius(10)
         }
         .padding()
@@ -100,7 +102,7 @@ struct ConfigurationHeader: View {
         
         Text("Configurações")
             .font(.system(size: 28, weight: .semibold))
-            .foregroundColor(Color("CorzinhaManeira"))
+            .foregroundColor(Color("primary"))
             .padding(.vertical)
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .leading)

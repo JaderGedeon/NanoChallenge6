@@ -35,7 +35,7 @@ struct AddListItemView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .topLeading)
-        .background(Color("CorzinhaManeira2"))
+        .background(Color("rowBackgroundColor"))
         .cornerRadius(10)
         .padding(.vertical, 1)
         .padding(.horizontal)
