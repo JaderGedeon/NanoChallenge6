@@ -22,7 +22,7 @@ struct ListsView: View {
         UISegmentedControl.appearance().backgroundColor = UIColor(named: "secondary")
         UISegmentedControl.appearance().isOpaque = true
         populateList()
-        CKManager.shared.fetchListsOther { ( list ) in records += list  }
+        CKManager.shared.fetchList { ( list ) in records = list  }
     }
     
     @State private var showItemForm = false
@@ -81,6 +81,7 @@ struct ListsView: View {
         print("add")
         showItemForm = true
         print(records)
+        CKManager.shared.saveList()
     }
     
     mutating func populateList() {
