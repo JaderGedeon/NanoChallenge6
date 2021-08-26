@@ -12,7 +12,7 @@ enum Tab {
     case all, individual, shared
 }
 
-struct HomeScreen: View {
+struct ListsView: View {
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primary")
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "secondary")!], for: .selected)
@@ -87,6 +87,7 @@ struct HomeScreen: View {
         lists.append(list)
     }
     
+    // MARK: teste fetch do container do CloudKit
     func fetchLists() {
         print("fetching")
         let publicDatabase = CKContainer(identifier: "iCloud.Nano6").publicCloudDatabase
@@ -108,6 +109,6 @@ struct HomeScreen: View {
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        ListsView()
     }
 }
