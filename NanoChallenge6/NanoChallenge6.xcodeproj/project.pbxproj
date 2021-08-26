@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
 		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
-		856928F826D56B6A00FBD178 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* HomeScreen.swift */; };
-		856928FA26D56EC300FBD178 /* GridList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F926D56EC300FBD178 /* GridList.swift */; };
+		856928F826D56B6A00FBD178 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* ListsView.swift */; };
 		856928FC26D571AB00FBD178 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FB26D571AB00FBD178 /* CardList.swift */; };
 		856928FE26D5804600FBD178 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FD26D5804600FBD178 /* CardButton.swift */; };
 		8569290126D587A200FBD178 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8569290026D587A200FBD178 /* ItemView.swift */; };
@@ -20,19 +19,20 @@
 		85929C3226D441170072D80E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85929C3126D441170072D80E /* Preview Assets.xcassets */; };
 		85929C3426D441170072D80E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85929C3326D441170072D80E /* Persistence.swift */; };
 		85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85929C3526D441170072D80E /* NanoChallenge6.xcdatamodeld */; };
+		85C0190C26D7CC0500703850 /* CardGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0190B26D7CC0500703850 /* CardGrid.swift */; };
+		85E62F8D26D6D1DF0038C256 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E62F8C26D6D1DF0038C256 /* CloudKit.framework */; };
+		85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D726D6E44800582D0C /* ListRecord.swift */; };
+		85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D926D6FCF300582D0C /* AddListView.swift */; };
+		85E9C4DD26D6FD4E00582D0C /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DC26D6FD4E00582D0C /* ListHeaderView.swift */; };
+		85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DE26D7050F00582D0C /* AddListItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
 		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
-		856928F726D56B6A00FBD178 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		856928F926D56EC300FBD178 /* GridList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridList.swift; sourceTree = "<group>"; };
+		856928F726D56B6A00FBD178 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		856928FB26D571AB00FBD178 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		856928FD26D5804600FBD178 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
-
-
-
 		8569290026D587A200FBD178 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		85929C2726D441150072D80E /* NanoChallenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85929C2A26D441150072D80E /* NanoChallenge6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6App.swift; sourceTree = "<group>"; };
@@ -42,6 +42,13 @@
 		85929C3326D441170072D80E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		85929C3626D441170072D80E /* NanoChallenge6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NanoChallenge6.xcdatamodel; sourceTree = "<group>"; };
 		85929C3826D441170072D80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C0190B26D7CC0500703850 /* CardGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGrid.swift; sourceTree = "<group>"; };
+		85E62F8A26D6D1D80038C256 /* NanoChallenge6.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NanoChallenge6.entitlements; sourceTree = "<group>"; };
+		85E62F8C26D6D1DF0038C256 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		85E9C4D726D6E44800582D0C /* ListRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecord.swift; sourceTree = "<group>"; };
+		85E9C4D926D6FCF300582D0C /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
+		85E9C4DC26D6FD4E00582D0C /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		85E9C4DE26D7050F00582D0C /* AddListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,21 +56,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E62F8D26D6D1DF0038C256 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		856928F626D56B5600FBD178 /* Home Screen */ = {
+		856928F626D56B5600FBD178 /* Lists View */ = {
 			isa = PBXGroup;
 			children = (
-				856928F726D56B6A00FBD178 /* HomeScreen.swift */,
-				856928F926D56EC300FBD178 /* GridList.swift */,
+				856928F726D56B6A00FBD178 /* ListsView.swift */,
 				856928FB26D571AB00FBD178 /* CardList.swift */,
 				856928FD26D5804600FBD178 /* CardButton.swift */,
+				85C0190B26D7CC0500703850 /* CardGrid.swift */,
 			);
-			path = "Home Screen";
+			path = "Lists View";
 			sourceTree = "<group>";
 		};
 		856928FF26D5878200FBD178 /* Item View */ = {
@@ -79,6 +87,7 @@
 			children = (
 				85929C2926D441150072D80E /* NanoChallenge6 */,
 				85929C2826D441150072D80E /* Products */,
+				85E62F8B26D6D1DF0038C256 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,8 +102,9 @@
 		85929C2926D441150072D80E /* NanoChallenge6 */ = {
 			isa = PBXGroup;
 			children = (
-				856928FF26D5878200FBD178 /* Item View */,
-				856928F626D56B5600FBD178 /* Home Screen */,
+				85E9C4D626D6E31000582D0C /* Model */,
+				85E9C4E326D738ED00582D0C /* Views */,
+				85E62F8A26D6D1D80038C256 /* NanoChallenge6.entitlements */,
 				85929C2A26D441150072D80E /* NanoChallenge6App.swift */,
 				85929C2C26D441150072D80E /* ContentView.swift */,
 				85929C2E26D441170072D80E /* Assets.xcassets */,
@@ -102,8 +112,6 @@
 				85929C3826D441170072D80E /* Info.plist */,
 				85929C3526D441170072D80E /* NanoChallenge6.xcdatamodeld */,
 				85929C3026D441170072D80E /* Preview Content */,
-				16EE775326D56B6700F131FA /* ListView.swift */,
-				16EE775526D6612C00F131FA /* ConfigurationView.swift */,
 			);
 			path = NanoChallenge6;
 			sourceTree = "<group>";
@@ -114,6 +122,52 @@
 				85929C3126D441170072D80E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		85E62F8B26D6D1DF0038C256 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85E62F8C26D6D1DF0038C256 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85E9C4D626D6E31000582D0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85E9C4D726D6E44800582D0C /* ListRecord.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85E9C4E026D7374800582D0C /* List View */ = {
+			isa = PBXGroup;
+			children = (
+				85E9C4DC26D6FD4E00582D0C /* ListHeaderView.swift */,
+				16EE775326D56B6700F131FA /* ListView.swift */,
+				85E9C4D926D6FCF300582D0C /* AddListView.swift */,
+				85E9C4DE26D7050F00582D0C /* AddListItemView.swift */,
+			);
+			path = "List View";
+			sourceTree = "<group>";
+		};
+		85E9C4E126D738AD00582D0C /* Configuration View */ = {
+			isa = PBXGroup;
+			children = (
+				16EE775526D6612C00F131FA /* ConfigurationView.swift */,
+			);
+			path = "Configuration View";
+			sourceTree = "<group>";
+		};
+		85E9C4E326D738ED00582D0C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E9C4E126D738AD00582D0C /* Configuration View */,
+				856928F626D56B5600FBD178 /* Lists View */,
+				85E9C4E026D7374800582D0C /* List View */,
+				856928FF26D5878200FBD178 /* Item View */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,16 +240,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */,
+				85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */,
+				85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */,
 				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
+				85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */,
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
-				856928FA26D56EC300FBD178 /* GridList.swift in Sources */,
-				856928F826D56B6A00FBD178 /* HomeScreen.swift in Sources */,
+				856928F826D56B6A00FBD178 /* ListsView.swift in Sources */,
 				8569290126D587A200FBD178 /* ItemView.swift in Sources */,
 				85929C3426D441170072D80E /* Persistence.swift in Sources */,
 				16EE775426D56B6700F131FA /* ListView.swift in Sources */,
 				85929C2D26D441150072D80E /* ContentView.swift in Sources */,
+				85C0190C26D7CC0500703850 /* CardGrid.swift in Sources */,
 				85929C2B26D441150072D80E /* NanoChallenge6App.swift in Sources */,
 				856928FC26D571AB00FBD178 /* CardList.swift in Sources */,
+				85E9C4DD26D6FD4E00582D0C /* ListHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,9 +381,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = YHY9LU893D;
+				DEVELOPMENT_TEAM = CFSW3AA3PQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -345,9 +404,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = YHY9LU893D;
+				DEVELOPMENT_TEAM = CFSW3AA3PQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
