@@ -12,6 +12,8 @@ enum Tab {
     case all, individual, shared
 }
 
+var records = [CKRecord]()
+
 struct ListsView: View {
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primary")
@@ -20,7 +22,7 @@ struct ListsView: View {
         UISegmentedControl.appearance().backgroundColor = UIColor(named: "secondary")
         UISegmentedControl.appearance().isOpaque = true
         populateList()
-        fetchLists()
+        CKManager.shared.fetchListsOther { ( list ) in records += list  }
     }
     
     @State private var showItemForm = false
@@ -67,7 +69,9 @@ struct ListsView: View {
                     }
 
                 }
-                Spacer()
+                Button(action: addList) {
+                    Text("aaaaaaa")
+                }
             }.padding()
             .navigationBarHidden(true)
         }
@@ -76,6 +80,7 @@ struct ListsView: View {
     func addList() {
         print("add")
         showItemForm = true
+        print(records)
     }
     
     mutating func populateList() {
@@ -83,25 +88,6 @@ struct ListsView: View {
         lists.append(list)
         list = ListRecord(name: "lista 2", description: "")
         lists.append(list)
-    }
-    
-    // MARK: teste fetch do container do CloudKit
-    func fetchLists() {
-        print("fetching")
-        let publicDatabase = CKContainer(identifier: "iCloud.Nano6").publicCloudDatabase
-        let query = CKQuery(recordType: "Lists", predicate: NSPredicate(value: true))
-        query.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        
-        publicDatabase.perform(query, inZoneWith: nil) { (records, error) in
-            records?.forEach({ (record) in
-                guard error == nil else {
-                    print(error?.localizedDescription as Any)
-                    return
-                }
-                
-                print(record.value(forKey: "name") ?? "nao")
-            })
-        }
     }
 }
 

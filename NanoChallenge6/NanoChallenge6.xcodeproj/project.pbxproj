@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163633D226D80FA2008458AB /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163633D126D80FA2008458AB /* CKManager.swift */; };
 		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
 		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
 		856928F826D56B6A00FBD178 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* ListsView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163633D126D80FA2008458AB /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
 		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		856928F726D56B6A00FBD178 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				85929C3826D441170072D80E /* Info.plist */,
 				85929C3526D441170072D80E /* NanoChallenge6.xcdatamodeld */,
 				85929C3026D441170072D80E /* Preview Content */,
+				163633D126D80FA2008458AB /* CKManager.swift */,
 			);
 			path = NanoChallenge6;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */,
 				85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */,
 				85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */,
+				163633D226D80FA2008458AB /* CKManager.swift in Sources */,
 				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
 				85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */,
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
@@ -384,7 +388,7 @@
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = CFSW3AA3PQ;
+				DEVELOPMENT_TEAM = YHY9LU893D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -392,7 +396,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6;
+				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6z;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -407,7 +411,7 @@
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = CFSW3AA3PQ;
+				DEVELOPMENT_TEAM = YHY9LU893D;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -415,7 +419,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6;
+				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6z;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
