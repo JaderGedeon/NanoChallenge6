@@ -21,6 +21,7 @@
 		85929C3426D441170072D80E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85929C3326D441170072D80E /* Persistence.swift */; };
 		85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85929C3526D441170072D80E /* NanoChallenge6.xcdatamodeld */; };
 		85C0190C26D7CC0500703850 /* CardGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0190B26D7CC0500703850 /* CardGrid.swift */; };
+		85C0837726D827E80036B73E /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C0837626D827E80036B73E /* ListManager.swift */; };
 		85E62F8D26D6D1DF0038C256 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E62F8C26D6D1DF0038C256 /* CloudKit.framework */; };
 		85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D726D6E44800582D0C /* ListRecord.swift */; };
 		85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D926D6FCF300582D0C /* AddListView.swift */; };
@@ -45,6 +46,7 @@
 		85929C3626D441170072D80E /* NanoChallenge6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NanoChallenge6.xcdatamodel; sourceTree = "<group>"; };
 		85929C3826D441170072D80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85C0190B26D7CC0500703850 /* CardGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGrid.swift; sourceTree = "<group>"; };
+		85C0837626D827E80036B73E /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
 		85E62F8A26D6D1D80038C256 /* NanoChallenge6.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NanoChallenge6.entitlements; sourceTree = "<group>"; };
 		85E62F8C26D6D1DF0038C256 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		85E9C4D726D6E44800582D0C /* ListRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecord.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				85E9C4D726D6E44800582D0C /* ListRecord.swift */,
+				85C0837626D827E80036B73E /* ListManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */,
 				85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */,
+				85C0837726D827E80036B73E /* ListManager.swift in Sources */,
 				85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */,
 				163633D226D80FA2008458AB /* CKManager.swift in Sources */,
 				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
@@ -388,7 +392,7 @@
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = YHY9LU893D;
+				DEVELOPMENT_TEAM = CFSW3AA3PQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -396,7 +400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6z;
+				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +415,7 @@
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = YHY9LU893D;
+				DEVELOPMENT_TEAM = CFSW3AA3PQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -419,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6z;
+				PRODUCT_BUNDLE_IDENTIFIER = grupo9.NanoChallenge6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

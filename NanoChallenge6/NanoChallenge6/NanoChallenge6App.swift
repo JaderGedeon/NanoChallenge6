@@ -14,6 +14,7 @@ struct NanoChallenge6App: App {
     var body: some Scene {
         WindowGroup {
             ListsView()
+                .environmentObject(ListManager())
         }
     }
 }

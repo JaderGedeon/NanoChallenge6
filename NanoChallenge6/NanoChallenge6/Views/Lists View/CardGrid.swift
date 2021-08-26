@@ -13,7 +13,7 @@ struct CardGrid: View {
     
     var body: some View {
         LazyVGrid(columns: columns, alignment: .center, spacing: 20){
-            ForEach(0..<lists.count) { i in
+            ForEach(0..<lists.count, id: \.self) { i in
                 NavigationLink(destination: ListView()) {
                     CardList(list: lists[i])
                 }

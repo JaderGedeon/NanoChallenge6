@@ -12,23 +12,19 @@ enum Tab {
     case all, individual, shared
 }
 
-var records = [CKRecord]()
-
 struct ListsView: View {
+    @EnvironmentObject var listManager: ListManager
+    
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primary")
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "secondary")!], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "primary")!], for: .normal)
         UISegmentedControl.appearance().backgroundColor = UIColor(named: "secondary")
         UISegmentedControl.appearance().isOpaque = true
-        populateList()
-        CKManager.shared.fetchListsOther { ( list ) in records += list  }
     }
     
-    @State private var showItemForm = false
     var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 135, maximum: 500)), count: 2)
 
-    var lists = [ListRecord(name: "individual", description: ""), ListRecord(name: "compartilhada", description: "")]
     var individualList = [ListRecord(name: "individual", description: "")]
     var sharedList = [ListRecord(name: "compartilhada", description: "")]
     
@@ -61,7 +57,7 @@ struct ListsView: View {
                     // apresenta o conjunto específico de lista de cada tab
                     switch selectedTab {
                     case .all:
-                        CardGrid(lists: lists)
+                        CardGrid(lists: listManager.allLists)
                     case .individual:
                         CardGrid(lists: individualList)
                     default:
@@ -69,25 +65,9 @@ struct ListsView: View {
                     }
 
                 }
-                Button(action: addList) {
-                    Text("aaaaaaa")
-                }
             }.padding()
             .navigationBarHidden(true)
         }
-    }
-    
-    func addList() {
-        print("add")
-        showItemForm = true
-        print(records)
-    }
-    
-    mutating func populateList() {
-        var list = ListRecord(name: "lista 1", description: "")
-        lists.append(list)
-        list = ListRecord(name: "lista 2", description: "")
-        lists.append(list)
     }
 }
 
