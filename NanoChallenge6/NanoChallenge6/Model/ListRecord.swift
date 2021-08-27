@@ -9,7 +9,7 @@ import SwiftUI
 import CloudKit
 
 struct ListRecord: Equatable {
-//    var id: CKRecord.ID
+    var id: CKRecord.ID?
     var name: String
     var description: String
     

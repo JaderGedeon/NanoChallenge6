@@ -104,6 +104,15 @@ struct CheckBoxView: View {
         
         Button(action: {
             marked.toggle()
+            
+//            let item = ListItem(check: false,
+//                     name: "Laruva",
+//                     description: "Laranja e Uva",
+//                     quantity: 300,
+//                     measurement: .gram)
+//
+//            CKManager.shared.saveItem(item: item, listParentID: recordList[0].recordID)
+            CKManager.shared.fetchItems(listParent: recordList[0].recordID)
         }) {
             
             Image(systemName: (marked ? "checkmark.square.fill" : "square"))
@@ -118,12 +127,23 @@ struct CheckBoxView: View {
     }
 }
 
+
+private var recordList = [CKRecord]()
+
 struct AddItemView: View {
     
     var body: some View {
         
         Button(action: {
-            print("New Item")
+            
+            CKManager.shared.fetchList { list in
+                recordList = list
+                
+                for record in recordList {
+                    print(record.value(forKey: "name") as? String ?? "Unknown")
+                    print(record.recordID)
+                }
+            }
         }) {
             
             Image(systemName: "plus.square")
