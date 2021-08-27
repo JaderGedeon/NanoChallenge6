@@ -10,10 +10,13 @@
 		163633D226D80FA2008458AB /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163633D126D80FA2008458AB /* CKManager.swift */; };
 		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
 		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
+		8550F18826D965CA00851178 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18726D965CA00851178 /* HeaderView.swift */; };
+		8550F18A26D9662A00851178 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18926D9662A00851178 /* AddItemView.swift */; };
+		8550F18D26D9667500851178 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18C26D9667500851178 /* CheckBoxView.swift */; };
 		856928F826D56B6A00FBD178 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* ListsView.swift */; };
 		856928FC26D571AB00FBD178 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FB26D571AB00FBD178 /* CardList.swift */; };
 		856928FE26D5804600FBD178 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FD26D5804600FBD178 /* CardButton.swift */; };
-		8569290126D587A200FBD178 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8569290026D587A200FBD178 /* ItemView.swift */; };
+		8569290126D587A200FBD178 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8569290026D587A200FBD178 /* ItemDetailView.swift */; };
 		85929C2B26D441150072D80E /* NanoChallenge6App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85929C2A26D441150072D80E /* NanoChallenge6App.swift */; };
 		85929C2D26D441150072D80E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85929C2C26D441150072D80E /* ContentView.swift */; };
 		85929C2F26D441170072D80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85929C2E26D441170072D80E /* Assets.xcassets */; };
@@ -25,7 +28,7 @@
 		85E62F8D26D6D1DF0038C256 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E62F8C26D6D1DF0038C256 /* CloudKit.framework */; };
 		85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D726D6E44800582D0C /* ListRecord.swift */; };
 		85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D926D6FCF300582D0C /* AddListView.swift */; };
-		85E9C4DD26D6FD4E00582D0C /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DC26D6FD4E00582D0C /* ListHeaderView.swift */; };
+		85E9C4DD26D6FD4E00582D0C /* ListFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */; };
 		85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DE26D7050F00582D0C /* AddListItemView.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +36,13 @@
 		163633D126D80FA2008458AB /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
 		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		8550F18726D965CA00851178 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8550F18926D9662A00851178 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		8550F18C26D9667500851178 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		856928F726D56B6A00FBD178 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		856928FB26D571AB00FBD178 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		856928FD26D5804600FBD178 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
-		8569290026D587A200FBD178 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		8569290026D587A200FBD178 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
 		85929C2726D441150072D80E /* NanoChallenge6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85929C2A26D441150072D80E /* NanoChallenge6App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6App.swift; sourceTree = "<group>"; };
 		85929C2C26D441150072D80E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,7 +57,7 @@
 		85E62F8C26D6D1DF0038C256 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		85E9C4D726D6E44800582D0C /* ListRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecord.swift; sourceTree = "<group>"; };
 		85E9C4D926D6FCF300582D0C /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
-		85E9C4DC26D6FD4E00582D0C /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormHeaderView.swift; sourceTree = "<group>"; };
 		85E9C4DE26D7050F00582D0C /* AddListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,25 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		8550F18626D9658300851178 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */,
+				85E9C4DE26D7050F00582D0C /* AddListItemView.swift */,
+				8550F18726D965CA00851178 /* HeaderView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		8550F18B26D9665C00851178 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				8550F18926D9662A00851178 /* AddItemView.swift */,
+				8550F18C26D9667500851178 /* CheckBoxView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		856928F626D56B5600FBD178 /* Lists View */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +114,8 @@
 		856928FF26D5878200FBD178 /* Item View */ = {
 			isa = PBXGroup;
 			children = (
-				8569290026D587A200FBD178 /* ItemView.swift */,
+				8569290026D587A200FBD178 /* ItemDetailView.swift */,
+				8550F18B26D9665C00851178 /* Subviews */,
 			);
 			path = "Item View";
 			sourceTree = "<group>";
@@ -157,10 +183,9 @@
 		85E9C4E026D7374800582D0C /* List View */ = {
 			isa = PBXGroup;
 			children = (
-				85E9C4DC26D6FD4E00582D0C /* ListHeaderView.swift */,
 				16EE775326D56B6700F131FA /* ListView.swift */,
 				85E9C4D926D6FCF300582D0C /* AddListView.swift */,
-				85E9C4DE26D7050F00582D0C /* AddListItemView.swift */,
+				8550F18626D9658300851178 /* Subviews */,
 			);
 			path = "List View";
 			sourceTree = "<group>";
@@ -254,22 +279,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				85929C3726D441170072D80E /* NanoChallenge6.xcdatamodeld in Sources */,
+				8550F18826D965CA00851178 /* HeaderView.swift in Sources */,
 				85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */,
+				8550F18D26D9667500851178 /* CheckBoxView.swift in Sources */,
 				85C0837726D827E80036B73E /* ListManager.swift in Sources */,
 				85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */,
 				163633D226D80FA2008458AB /* CKManager.swift in Sources */,
 				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
 				85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */,
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
+				8550F18A26D9662A00851178 /* AddItemView.swift in Sources */,
 				856928F826D56B6A00FBD178 /* ListsView.swift in Sources */,
-				8569290126D587A200FBD178 /* ItemView.swift in Sources */,
+				8569290126D587A200FBD178 /* ItemDetailView.swift in Sources */,
 				85929C3426D441170072D80E /* Persistence.swift in Sources */,
 				16EE775426D56B6700F131FA /* ListView.swift in Sources */,
 				85929C2D26D441150072D80E /* ContentView.swift in Sources */,
 				85C0190C26D7CC0500703850 /* CardGrid.swift in Sources */,
 				85929C2B26D441150072D80E /* NanoChallenge6App.swift in Sources */,
 				856928FC26D571AB00FBD178 /* CardList.swift in Sources */,
-				85E9C4DD26D6FD4E00582D0C /* ListHeaderView.swift in Sources */,
+				85E9C4DD26D6FD4E00582D0C /* ListFormHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

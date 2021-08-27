@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemView: View {
+struct ItemDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var itemName: String = ""
     @State private var itemDescription: String = ""
@@ -120,6 +120,6 @@ enum Measure: String, CaseIterable, Identifiable {
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView()
+        ItemDetailView()
     }
 }
