@@ -59,9 +59,10 @@ class CKManager {
         
     }
     
-    func fetchItems(listParent: CKRecord.ID/*, completion: @escaping ( [CKRecord] ) -> () */) {
+    func fetchItems(listParent: CKRecord.ID, completion: @escaping ( [CKRecord] ) -> () ) {
         
-        let predicate = NSPredicate(format: "listParent == %@", listParent.recordName)
+        let reference = CKRecord.Reference(recordID: listParent, action: .none)
+        let predicate = NSPredicate(format: "listParent == %@", reference)
         let query = CKQuery(recordType: "Item", predicate: predicate)
         let operation = CKQueryOperation(query: query)
         
@@ -72,10 +73,7 @@ class CKManager {
         }
         
         operation.queryCompletionBlock = { cursor, error in
-            //completion(itemRecords)
-            for record in itemRecords {
-                print(record)
-            }
+            completion(itemRecords)
         }
         
         container.add(operation)
