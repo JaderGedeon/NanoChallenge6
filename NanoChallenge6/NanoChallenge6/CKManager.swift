@@ -22,9 +22,7 @@ class CKManager {
     // MARK: teste fetch do container do CloudKit
     func fetchList(completion: @escaping ( [CKRecord] ) -> () ) {
         
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "Lists", predicate: predicate)
-        query.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        let query = CKQuery(recordType: "Lists", predicate: NSPredicate(value: true))
         let operation = CKQueryOperation(query: query)
         
         var itemRecords: [CKRecord] = []
@@ -43,16 +41,11 @@ class CKManager {
     // MARK: teste save do CKRecord no CloudKit
     func saveList(list: ListRecord) {
         
-        let oizinho = CKRecord.init(recordType: "Lists")
-        oizinho.setObject(list.name as __CKRecordObjCValue, forKey: "name")
+        let listRecordObject = CKRecord(recordType: "Lists")
+        listRecordObject["name"] = list.name
         
-        container.save(oizinho, completionHandler: { (record, error) in
-//
-//            if error != nil {
-//                print("There was an error \(error!)")
-//            }
-            
-        })
+        container.save(listRecordObject, completionHandler: { (record, error) in } )
+
     }
     
     func deleteList(recordID : CKRecord.ID) {
@@ -61,26 +54,36 @@ class CKManager {
         
     }
     
-    func modifyList() {
+    func fetchItems(completion: @escaping ( [CKRecord] ) -> () ) {
+        
+        let query = CKQuery(recordType: "Item", predicate: NSPredicate(value: true))
+        let operation = CKQueryOperation(query: query)
+        
+        var itemRecords: [CKRecord] = []
+        
+        operation.recordFetchedBlock = { record in
+            itemRecords.append(record)
+        }
+        
+        operation.queryCompletionBlock = { cursor, error in
+            completion(itemRecords)
+        }
+        
+        container.add(operation)
+    }
+    
+    func saveItem(item: ListRecord) {
+        
+        let listRecordObject = CKRecord(recordType: "Item")
+        listRecordObject["name"] = item.name
+        
+        container.save(listRecordObject, completionHandler: { (record, error) in } )
+
+    }
+    
+    func deleteItem(recordID : CKRecord.ID) {
+
+        container.delete(withRecordID: recordID, completionHandler: { (record, error) in } )
         
     }
 }
-
-//func fetchLists() {
-//    print("fetching")
-//
-//    let query = CKQuery(recordType: "Lists", predicate: NSPredicate(value: true))
-//
-//    query.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-//
-//    container.perform(query, inZoneWith: nil) { (records, error) in
-//        records?.forEach({ (record) in
-//            guard error == nil else {
-//                print(error?.localizedDescription as Any)
-//                return
-//            }
-//
-//            print(record.value(forKey: "name") ?? "nao")
-//        })
-//    }
-//}
