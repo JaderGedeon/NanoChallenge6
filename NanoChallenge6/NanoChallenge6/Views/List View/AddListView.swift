@@ -26,6 +26,7 @@ struct AddListView: View {
         .navigationBarTitle("", displayMode: .inline)
         .onDisappear(perform: {
             listManager.addNewList(newList: list)
+            listManager.fetchList()
         })
      
     } // body

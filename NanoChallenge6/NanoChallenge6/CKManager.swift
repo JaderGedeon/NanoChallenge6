@@ -32,7 +32,9 @@ class CKManager {
         }
         
         operation.queryCompletionBlock = { cursor, error in
-            completion(itemRecords)
+            DispatchQueue.main.async {
+                completion(itemRecords)
+            }
         }
         
         container.add(operation)

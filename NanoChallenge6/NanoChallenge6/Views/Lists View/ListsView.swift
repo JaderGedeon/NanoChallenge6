@@ -58,7 +58,9 @@ struct ListsView: View {
                 }
             }.padding()
             .navigationBarHidden(true)
-        }.onAppear(perform: {
+//            .navigationBarTitle("", displayMode: .inline)
+        }
+        .onAppear(perform: {
             listManager.fetchList()
         })
     }

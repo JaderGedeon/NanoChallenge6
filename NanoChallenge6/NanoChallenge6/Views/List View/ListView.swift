@@ -144,23 +144,3 @@ struct AddItemView: View {
 }
 
 
-
-enum UnitMeasurement: String {
-    case unit = "Uni"
-    case millilitre = "mL"
-    case litre = "litros"
-    case gram = "g"
-    case kilogram = "Kg"
-}
-
-struct ListItem: Identifiable {
-    
-    var id = UUID()
-    var check: Bool
-    var image: Image?
-    var name: String
-    var description: String
-    var quantity: Int
-    var measurement: UnitMeasurement
-    
-}

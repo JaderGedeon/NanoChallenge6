@@ -88,16 +88,23 @@ struct ItemView: View {
                 Spacer()
             }
             .navigationBarTitle("", displayMode: .inline)
-            .navigationBarItems(leading: Button(action: { presentationMode.wrappedValue.dismiss() }, label: {Text("Cancel").font(.body).foregroundColor(Color("primary"))}), trailing: Button(action: { print("add")}, label: {
-                Text("Add").bold().foregroundColor(Color("primary"))
+            .navigationBarItems(leading:
+                                    Button(action: { presentationMode.wrappedValue.dismiss() },
+                                           label: {
+                                            Text("Cancel")
+                                                .font(.body)
+                                                .foregroundColor(Color("primary"))}),
+                                trailing:
+                                    Button(action: { print("add") },
+                                           label: {
+                                            Text("Add")
+                                                .bold()
+                                                .foregroundColor(Color("primary"))
             }))
             .padding(.leading, 30)
             .padding(.trailing, 30)
             .foregroundColor(Color("titleColor"))
         }
-        
-
-
     }
 }
 
