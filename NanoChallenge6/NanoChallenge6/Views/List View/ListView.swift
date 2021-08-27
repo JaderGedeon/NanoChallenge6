@@ -9,6 +9,8 @@ import SwiftUI
 import CloudKit
 
 struct ListView: View {
+    @State private var showingDetailView = false
+    
     var list: ListRecord
     
     init(list: ListRecord) {
@@ -29,29 +31,14 @@ struct ListView: View {
             LazyVStack() {
                 
                 ForEach(ListItemData) { item in
-                    HStack(alignment: .top, spacing: 13){
-                        
-                        CheckBoxView(marked: item.check)
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text(item.name)
-                                .fontWeight(.bold)
-                            
-                            Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
-                                .foregroundColor(Color("textColor"))
-                            
-                        }
-                        .padding(.top, 3)
+                    ListItemView(item: item).onTapGesture {
+                        showingDetailView.toggle()
+                    }.sheet(isPresented: $showingDetailView) {
+                        ItemDetailView(item: $ListItemData[0])
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .background(Color("rowBackgroundColor"))
-                    .cornerRadius(10)
-                    .padding(.vertical, 1)
-                    .padding(.horizontal)
+                    
                 }
-                AddItemView()
+                AddListItemView()
             }
             
         }
@@ -64,17 +51,3 @@ struct ListView: View {
         UINavigationBar.appearance().tintColor = UIColor(named: "primary")
     }
 }
-
-//struct ListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//        ForEach(ColorScheme.allCases, id: \.self) {
-//            ListView(list: Bi).preferredColorScheme($0)
-//        }
-//    }
-//}
-
-
-
-
-

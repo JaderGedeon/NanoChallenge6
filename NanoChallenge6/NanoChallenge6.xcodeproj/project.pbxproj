@@ -11,8 +11,8 @@
 		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
 		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
 		8550F18826D965CA00851178 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18726D965CA00851178 /* HeaderView.swift */; };
-		8550F18A26D9662A00851178 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18926D9662A00851178 /* AddItemView.swift */; };
 		8550F18D26D9667500851178 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18C26D9667500851178 /* CheckBoxView.swift */; };
+		8550F18F26D9682700851178 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18E26D9682700851178 /* ListItemView.swift */; };
 		856928F826D56B6A00FBD178 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928F726D56B6A00FBD178 /* ListsView.swift */; };
 		856928FC26D571AB00FBD178 /* CardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FB26D571AB00FBD178 /* CardList.swift */; };
 		856928FE26D5804600FBD178 /* CardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856928FD26D5804600FBD178 /* CardButton.swift */; };
@@ -37,8 +37,8 @@
 		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		8550F18726D965CA00851178 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		8550F18926D9662A00851178 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		8550F18C26D9667500851178 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
+		8550F18E26D9682700851178 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		856928F726D56B6A00FBD178 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		856928FB26D571AB00FBD178 /* CardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardList.swift; sourceTree = "<group>"; };
 		856928FD26D5804600FBD178 /* CardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardButton.swift; sourceTree = "<group>"; };
@@ -86,9 +86,8 @@
 		8550F18626D9658300851178 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */,
-				85E9C4DE26D7050F00582D0C /* AddListItemView.swift */,
 				8550F18726D965CA00851178 /* HeaderView.swift */,
+				85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -96,8 +95,9 @@
 		8550F18B26D9665C00851178 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				8550F18926D9662A00851178 /* AddItemView.swift */,
 				8550F18C26D9667500851178 /* CheckBoxView.swift */,
+				8550F18E26D9682700851178 /* ListItemView.swift */,
+				85E9C4DE26D7050F00582D0C /* AddListItemView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -288,11 +288,11 @@
 				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
 				85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */,
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
-				8550F18A26D9662A00851178 /* AddItemView.swift in Sources */,
 				856928F826D56B6A00FBD178 /* ListsView.swift in Sources */,
 				8569290126D587A200FBD178 /* ItemDetailView.swift in Sources */,
 				85929C3426D441170072D80E /* Persistence.swift in Sources */,
 				16EE775426D56B6700F131FA /* ListView.swift in Sources */,
+				8550F18F26D9682700851178 /* ListItemView.swift in Sources */,
 				85929C2D26D441150072D80E /* ContentView.swift in Sources */,
 				85C0190C26D7CC0500703850 /* CardGrid.swift in Sources */,
 				85929C2B26D441150072D80E /* NanoChallenge6App.swift in Sources */,
