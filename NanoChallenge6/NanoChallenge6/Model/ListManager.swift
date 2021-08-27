@@ -78,6 +78,13 @@ class ListManager: ObservableObject, Equatable {
         }
     }
     
+    func getList(index: Int) -> ListRecord {
+        if index < allLists.count {
+            return allLists[index]
+        }
+        return ListRecord(name: "", description: "", items: nil)
+    }
+    
     func resetLists() {
         recordList1.removeAll()
         allLists.removeAll()

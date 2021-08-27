@@ -9,12 +9,13 @@ import SwiftUI
 import CloudKit
 
 struct ListView: View {
-    var items = [CKRecord]()
+    @State private var showingDetailView = false
     
-    init() {
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
+    var list: ListRecord
+    
+    init(list: ListRecord) {
+        self.list = list
+        setNavigationAppearance()
     }
     
     @State var ListItemData = [
@@ -25,41 +26,30 @@ struct ListView: View {
     var body: some View {
         ScrollView {
             
-            HeaderView(title: "Lista 1",
-                       subtitle: "Lista do rolê de sexta")
+            HeaderView(list: list)
             
             LazyVStack() {
                 
                 ForEach(ListItemData) { item in
-                    HStack(alignment: .top, spacing: 13){
-                        
-                        CheckBoxView(marked: item.check)
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text(item.name)
-                                .fontWeight(.bold)
-                            
-                            Text("\(item.quantity) \(item.measurement.rawValue) \(item.description)")
-                                .foregroundColor(Color("textColor"))
-                            
-                        }
-                        .padding(.top, 3)
+                    ListItemView(item: item).onTapGesture {
+                        showingDetailView.toggle()
+                    }.sheet(isPresented: $showingDetailView) {
+                        ItemDetailView(item: $ListItemData[0])
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .background(Color("rowBackgroundColor"))
-                    .cornerRadius(10)
-                    .padding(.vertical, 1)
-                    .padding(.horizontal)
+                    
                 }
-                AddItemView()
+                AddListItemView()
             }
             
         }
         .navigationBarTitle("", displayMode: .inline)
     }
+    func setNavigationAppearance() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
 }
+  // AQUI Ó
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
@@ -162,5 +152,3 @@ struct AddItemView: View {
         .padding(.horizontal)
     }
 }
-
-

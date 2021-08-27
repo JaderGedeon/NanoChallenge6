@@ -19,7 +19,7 @@ struct AddListView: View {
     
     var body: some View {
         ScrollView {
-            ListHeaderView(list: $list)
+            ListFormHeaderView(list: $list)
             AddListItemView()
             
         }// scroll

@@ -28,9 +28,7 @@ struct AddListItemView: View {
         .padding(.vertical, 1)
         .padding(.horizontal)
     }
-    
 
-    
 }
 
 struct AddItemView1_Previews: PreviewProvider {

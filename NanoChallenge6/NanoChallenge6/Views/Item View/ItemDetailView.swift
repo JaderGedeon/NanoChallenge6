@@ -7,18 +7,16 @@
 
 import SwiftUI
 
-struct ItemView: View {
+struct ItemDetailView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var itemName: String = ""
-    @State private var itemDescription: String = ""
-    @State private var itemQuantity: Int = 1
+
     @State private var selectedMeasure = Measure.unidade
     
-    init() {
-        UITextView.appearance().backgroundColor = .clear
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-            UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
+    @Binding var item: ListItem
+    
+    init(item: Binding<ListItem>) {
+        self._item = item
+        setNavigationBarAppearance()
     }
     
     var body: some View {
@@ -30,7 +28,7 @@ struct ItemView: View {
                     .cornerRadius(15)
                     .padding()
                 
-                TextField("Nome", text: $itemName)
+                TextField("Nome", text: $item.name)
                     .padding(.all)
                     .frame(width: .infinity, height: 40, alignment: .center)
                     .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Color("textFieldBackground")))
@@ -41,11 +39,11 @@ struct ItemView: View {
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
                         .fill(Color("textFieldBackground"))
        
-                    TextEditor(text: $itemDescription)
+                    TextEditor(text: $item.description)
                         .padding(.horizontal, 5)
                         .padding(.vertical, 3)
                     
-                    if itemDescription.isEmpty {
+                    if item.description.isEmpty {
                         Text("Description")
                             .foregroundColor(Color(UIColor.placeholderText))
                             .padding(.horizontal, 14)
@@ -56,12 +54,12 @@ struct ItemView: View {
                 .frame(width: .infinity, height: 150, alignment: .center)
                 
                 HStack(spacing: 30) {
-                    Stepper(onIncrement: { itemQuantity += 1 },
-                                    onDecrement: { itemQuantity -= 1 }) {
+                    Stepper(onIncrement: { item.quantity += 1 },
+                            onDecrement: { item.quantity -= 1 }) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8, style: .continuous)
                                 .fill(Color("textFieldBackground"))
-                            Text("\(itemQuantity)")
+                            Text("\(item.quantity)")
                                 
                             
                         }.frame(width: 60, height: 33, alignment: .center)
@@ -106,6 +104,13 @@ struct ItemView: View {
             .foregroundColor(Color("titleColor"))
         }
     }
+    
+    func setNavigationBarAppearance() {
+        UITextView.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().tintColor = UIColor(named: "primary")
+    }
 }
 
 enum Measure: String, CaseIterable, Identifiable {
@@ -116,10 +121,4 @@ enum Measure: String, CaseIterable, Identifiable {
     case grama
     
     var id: String { self.rawValue }
-}
-
-struct ItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemView()
-    }
 }
