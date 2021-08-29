@@ -9,12 +9,13 @@ import SwiftUI
 import CloudKit
 
 struct ListView: View {
-    @State private var showingDetailView = false
+    @State private var showingItemDetailView = false
+    @State private var showingConfigurationView = false
     
-    var list: ListRecord
+    @Binding var list: ListRecord
     
-    init(list: ListRecord) {
-        self.list = list
+    init(list: Binding<ListRecord>) {
+        self._list = list
         setNavigationAppearance()
     }
     
@@ -25,15 +26,15 @@ struct ListView: View {
     
     var body: some View {
         ScrollView {
-            
             HeaderView(list: list)
             
             LazyVStack() {
-                
                 ForEach(ListItemData) { item in
+                    
                     ListItemView(item: item).onTapGesture {
-                        showingDetailView.toggle()
-                    }.sheet(isPresented: $showingDetailView) {
+                        showingItemDetailView.toggle()
+                    }
+                    .sheet(isPresented: $showingItemDetailView) {
                         ItemDetailView(item: $ListItemData[0])
                     }
                     
@@ -43,7 +44,12 @@ struct ListView: View {
             
         }
         .navigationBarTitle("", displayMode: .inline)
-        
+        .navigationBarItems(trailing:
+            NavigationLink(destination: ConfigurationView(list: $list)) {
+                Image(systemName: "ellipsis.circle")
+                    .font(.system(size: CGFloat(20)))
+            }
+        )
     }
     
     func setNavigationAppearance() {
@@ -53,3 +59,9 @@ struct ListView: View {
     }
     
 }
+//
+//struct ListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListView(list: ListRecord(name: "Md", description: ""))
+//    }
+//}

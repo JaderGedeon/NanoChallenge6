@@ -19,7 +19,7 @@ class CKManager {
     
     //iCloud.testezinhobacanaeshow
     //iCloud.Nano6
-    let container = CKContainer(identifier: "iCloud.testezinhobacanaeshow").publicCloudDatabase
+    let container = CKContainer(identifier: "iCloud.Nano6").publicCloudDatabase
     
     // MARK: teste fetch do container do CloudKit
     func fetchList(completion: @escaping ( [CKRecord] ) -> () ) {

@@ -12,13 +12,12 @@ struct AddListItemView: View {
     @State var item = ListItem(check: false, image: nil, name: "", description: "", quantity: 6, measurement: .unit)
         
     var body: some View {
-        HStack(alignment: .top, spacing: 13){
+        HStack(spacing: 13){
             
             CheckBoxView(marked: item.check)
             
             TextField("Novo item", text: $item.name)
                 .font(.headline.bold())
-                .padding(.top, 10)
 
         }
         .padding()

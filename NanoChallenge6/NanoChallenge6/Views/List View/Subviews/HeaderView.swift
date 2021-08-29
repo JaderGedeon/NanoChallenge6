@@ -21,11 +21,14 @@ struct HeaderView: View {
                 //                .padding(.top)
                 .font(.system(size: 28, weight: .bold))
             
-            Text(list.description)
-                .padding(.horizontal)
-                .padding(.vertical, 2)
-                .padding(.bottom, 15)
-                .foregroundColor(Color("textColor"))
+            if list.description != "" {
+                Text(list.description)
+                    .padding(.horizontal)
+                    .padding(.vertical, 2)
+                    .padding(.bottom, 15)
+                    .foregroundColor(Color("textColor"))
+            }
+
             
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -33,6 +36,6 @@ struct HeaderView: View {
 }
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(list: ListRecord(name: "", description: "", items: nil))
+        HeaderView(list: ListRecord(name: "fdasdd", description: "fasdf", items: nil))
     }
 }

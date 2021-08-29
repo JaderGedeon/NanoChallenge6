@@ -35,6 +35,10 @@ class ListManager: ObservableObject, Equatable {
         }
     }
     
+    func fetchListByName(name: String) -> ListRecord {
+        return allLists.first(where: { $0.name == name }) ?? ListRecord(name: "Lista", description: "")
+    }
+    
     private func downloadList() -> [CKRecord] {
         let recordList = [CKRecord]()
         CKManager.shared.fetchList { (list) in
@@ -47,12 +51,6 @@ class ListManager: ObservableObject, Equatable {
         cloudKitManager.saveList(list: newList)
         allLists.append(newList)
         print("adi")
-    }
-    
-    private func checkDeletedLists() {
-        // comparar downloaded list com all lists
-        
-        // remover de all lists todos os itens que não estão na list
     }
     
     private func parse(_ downloadedList: [CKRecord]) -> [ListRecord] {
@@ -68,8 +66,9 @@ class ListManager: ObservableObject, Equatable {
     private func parseListRecords() {
         for i in 0..<recordList1.count {
             let description = recordList1[i].value(forKey: "description") ?? ""
-            let list = ListRecord(name: recordList1[i].value(forKey: "name") as! String, description: description as! String)
-            
+            var list = ListRecord(name: recordList1[i].value(forKey: "name") as! String, description: description as! String)
+            var item = ListItem(check: false, name: "macarrao", description: "dona benta", quantity: 1, measurement: UnitMeasurement.unit)
+            list.items?.append(item)
             // verificar se algum record foi adicionado
             if !allLists.contains(list) {
                 print("adicionou um novo")

@@ -48,11 +48,11 @@ struct ListsView: View {
                     // apresenta o conjunto específico de lista de cada tab
                     switch selectedTab {
                     case .all:
-                        CardGrid(lists: listManager.allLists)
+                        CardGrid(listType: "all")
                     case .individual:
-                        CardGrid(lists: listManager.individualList)
+                        CardGrid(listType: "individual")
                     default:
-                        CardGrid(lists: listManager.sharedList)
+                        CardGrid(listType: "shared")
                     }
 
                 }
@@ -77,5 +77,6 @@ struct ListsView: View {
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         ListsView()
+            .environmentObject(ListManager())
     }
 }

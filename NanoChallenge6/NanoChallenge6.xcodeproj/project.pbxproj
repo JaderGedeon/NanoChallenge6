@@ -10,6 +10,8 @@
 		163633D226D80FA2008458AB /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163633D126D80FA2008458AB /* CKManager.swift */; };
 		16EE775426D56B6700F131FA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775326D56B6700F131FA /* ListView.swift */; };
 		16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EE775526D6612C00F131FA /* ConfigurationView.swift */; };
+		854BAF8126DB161900EEA224 /* ListConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BAF8026DB161900EEA224 /* ListConfigurations.swift */; };
+		854BAF8326DB168E00EEA224 /* AddSharedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854BAF8226DB168E00EEA224 /* AddSharedUser.swift */; };
 		8550F18826D965CA00851178 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18726D965CA00851178 /* HeaderView.swift */; };
 		8550F18D26D9667500851178 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18C26D9667500851178 /* CheckBoxView.swift */; };
 		8550F18F26D9682700851178 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8550F18E26D9682700851178 /* ListItemView.swift */; };
@@ -30,12 +32,15 @@
 		85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4D926D6FCF300582D0C /* AddListView.swift */; };
 		85E9C4DD26D6FD4E00582D0C /* ListFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */; };
 		85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DE26D7050F00582D0C /* AddListItemView.swift */; };
+		85F9F69626DAD6F50054C343 /* ConfigurationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9F69526DAD6F50054C343 /* ConfigurationHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		163633D126D80FA2008458AB /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
 		16EE775326D56B6700F131FA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		16EE775526D6612C00F131FA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		854BAF8026DB161900EEA224 /* ListConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurations.swift; sourceTree = "<group>"; };
+		854BAF8226DB168E00EEA224 /* AddSharedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSharedUser.swift; sourceTree = "<group>"; };
 		8550F18726D965CA00851178 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8550F18C26D9667500851178 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		8550F18E26D9682700851178 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 		85E9C4D926D6FCF300582D0C /* AddListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListView.swift; sourceTree = "<group>"; };
 		85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormHeaderView.swift; sourceTree = "<group>"; };
 		85E9C4DE26D7050F00582D0C /* AddListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListItemView.swift; sourceTree = "<group>"; };
+		85F9F69526DAD6F50054C343 /* ConfigurationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				16EE775526D6612C00F131FA /* ConfigurationView.swift */,
+				85F9F69426DAD6A10054C343 /* Subviews */,
 			);
 			path = "Configuration View";
 			sourceTree = "<group>";
@@ -201,12 +208,22 @@
 		85E9C4E326D738ED00582D0C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				85E9C4E126D738AD00582D0C /* Configuration View */,
 				856928F626D56B5600FBD178 /* Lists View */,
 				85E9C4E026D7374800582D0C /* List View */,
+				85E9C4E126D738AD00582D0C /* Configuration View */,
 				856928FF26D5878200FBD178 /* Item View */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		85F9F69426DAD6A10054C343 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				85F9F69526DAD6F50054C343 /* ConfigurationHeader.swift */,
+				854BAF8026DB161900EEA224 /* ListConfigurations.swift */,
+				854BAF8226DB168E00EEA224 /* AddSharedUser.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,13 +301,16 @@
 				8550F18D26D9667500851178 /* CheckBoxView.swift in Sources */,
 				85C0837726D827E80036B73E /* ListManager.swift in Sources */,
 				85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */,
+				854BAF8326DB168E00EEA224 /* AddSharedUser.swift in Sources */,
 				163633D226D80FA2008458AB /* CKManager.swift in Sources */,
 				16EE775626D6612C00F131FA /* ConfigurationView.swift in Sources */,
+				854BAF8126DB161900EEA224 /* ListConfigurations.swift in Sources */,
 				85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */,
 				856928FE26D5804600FBD178 /* CardButton.swift in Sources */,
 				856928F826D56B6A00FBD178 /* ListsView.swift in Sources */,
 				8569290126D587A200FBD178 /* ItemDetailView.swift in Sources */,
 				85929C3426D441170072D80E /* Persistence.swift in Sources */,
+				85F9F69626DAD6F50054C343 /* ConfigurationHeader.swift in Sources */,
 				16EE775426D56B6700F131FA /* ListView.swift in Sources */,
 				8550F18F26D9682700851178 /* ListItemView.swift in Sources */,
 				85929C2D26D441150072D80E /* ContentView.swift in Sources */,
@@ -428,7 +448,7 @@
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CFSW3AA3PQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -451,7 +471,7 @@
 				CODE_SIGN_ENTITLEMENTS = NanoChallenge6/NanoChallenge6.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NanoChallenge6/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CFSW3AA3PQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NanoChallenge6/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
