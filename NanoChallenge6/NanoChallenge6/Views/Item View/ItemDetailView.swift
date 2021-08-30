@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ItemDetailView: View {
     @Environment(\.presentationMode) var presentationMode
-
-    @State private var selectedMeasure = Measure.unidade
     
     @Binding var item: ListItem
     
+    @State private var draftItem: ListItem
+    
     init(item: Binding<ListItem>) {
         self._item = item
+        self._draftItem = State(initialValue: item.wrappedValue)
         setNavigationBarAppearance()
     }
     
@@ -28,7 +29,7 @@ struct ItemDetailView: View {
                     .cornerRadius(15)
                     .padding()
                 
-                TextField("Nome", text: $item.name)
+                TextField("Nome", text: $draftItem.name)
                     .padding(.all)
                     .frame(width: .infinity, height: 40, alignment: .center)
                     .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Color("textFieldBackground")))
@@ -39,7 +40,7 @@ struct ItemDetailView: View {
                     RoundedRectangle(cornerRadius: 8, style: .continuous)
                         .fill(Color("textFieldBackground"))
        
-                    TextEditor(text: $item.description)
+                    TextEditor(text: $draftItem.description)
                         .padding(.horizontal, 5)
                         .padding(.vertical, 3)
                     
@@ -54,12 +55,12 @@ struct ItemDetailView: View {
                 .frame(width: .infinity, height: 150, alignment: .center)
                 
                 HStack(spacing: 30) {
-                    Stepper(onIncrement: { item.quantity += 1 },
-                            onDecrement: { item.quantity -= 1 }) {
+                    Stepper(onIncrement: { draftItem.quantity += 1 },
+                            onDecrement: { draftItem.quantity -= 1 }) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 8, style: .continuous)
                                 .fill(Color("textFieldBackground"))
-                            Text("\(item.quantity)")
+                            Text("\(draftItem.quantity)")
                                 
                             
                         }.frame(width: 60, height: 33, alignment: .center)
@@ -71,7 +72,7 @@ struct ItemDetailView: View {
                         RoundedRectangle(cornerRadius: 8, style: .continuous)
                             .fill(Color("textFieldBackground"))
                         
-                        Picker("Medida", selection: $selectedMeasure) {
+                        Picker("Medida", selection: $draftItem.measurement) {
                             Text("Unidade").tag(Measure.unidade)
                             Text("Litro").tag(Measure.litro)
                             Text("Quilo").tag(Measure.quilo)
@@ -87,13 +88,14 @@ struct ItemDetailView: View {
             }
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(leading:
-                                    Button(action: { presentationMode.wrappedValue.dismiss() },
+                                    Button(action: { cancelChanges() },
                                            label: {
                                             Text("Cancel")
                                                 .font(.body)
                                                 .foregroundColor(Color("primary"))}),
                                 trailing:
-                                    Button(action: { print("add") },
+                                    Button(action: { saveChanges()
+                                             },
                                            label: {
                                             Text("Add")
                                                 .bold()
@@ -103,6 +105,15 @@ struct ItemDetailView: View {
             .padding(.trailing, 30)
             .foregroundColor(Color("titleColor"))
         }
+    }
+    
+    func cancelChanges() {
+        presentationMode.wrappedValue.dismiss()
+    }
+    
+     func saveChanges() {
+        self._item.wrappedValue = draftItem
+        presentationMode.wrappedValue.dismiss()
     }
     
     func setNavigationBarAppearance() {

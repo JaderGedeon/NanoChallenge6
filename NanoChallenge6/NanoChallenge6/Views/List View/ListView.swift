@@ -29,17 +29,19 @@ struct ListView: View {
             HeaderView(list: list)
             
             LazyVStack() {
-                ForEach(ListItemData) { item in
-                    
-                    ListItemView(item: item).onTapGesture {
-                        showingItemDetailView.toggle()
+                if !list.items.isEmpty {
+                    ForEach(0..<list.items.count) { i in
+                        
+                        ListItemView(item: list.items[i]).onTapGesture {
+                            showingItemDetailView.toggle()
+                        }
+                        .sheet(isPresented: $showingItemDetailView) {
+                            ItemDetailView(item: $list.items[i])
+                        }
+                        
                     }
-                    .sheet(isPresented: $showingItemDetailView) {
-                        ItemDetailView(item: $ListItemData[0])
-                    }
-                    
                 }
-                AddListItemView()
+                AddListItemView(list: $list)
             }
             
         }
@@ -50,6 +52,12 @@ struct ListView: View {
                     .font(.system(size: CGFloat(20)))
             }
         )
+    }
+    
+    func populateItems() {
+        list.items = [ListItem]()
+        var item = ListItem(check: false, name: "macarrão", description: "da dona benta", quantity: 1, measurement: UnitMeasurement.unit)
+        list.items.append(item)
     }
     
     func setNavigationAppearance() {

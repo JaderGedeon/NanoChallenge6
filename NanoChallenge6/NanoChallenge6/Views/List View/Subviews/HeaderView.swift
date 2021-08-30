@@ -36,6 +36,6 @@ struct HeaderView: View {
 }
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(list: ListRecord(name: "fdasdd", description: "fasdf", items: nil))
+        HeaderView(list: ListRecord(name: "fdasdd", description: "fasdf"))
     }
 }

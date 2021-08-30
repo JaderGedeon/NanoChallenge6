@@ -67,8 +67,8 @@ class ListManager: ObservableObject, Equatable {
         for i in 0..<recordList1.count {
             let description = recordList1[i].value(forKey: "description") ?? ""
             var list = ListRecord(name: recordList1[i].value(forKey: "name") as! String, description: description as! String)
-            var item = ListItem(check: false, name: "macarrao", description: "dona benta", quantity: 1, measurement: UnitMeasurement.unit)
-            list.items?.append(item)
+            list.id = recordList1[i].recordID
+
             // verificar se algum record foi adicionado
             if !allLists.contains(list) {
                 print("adicionou um novo")
@@ -81,7 +81,7 @@ class ListManager: ObservableObject, Equatable {
         if index < allLists.count {
             return allLists[index]
         }
-        return ListRecord(name: "", description: "", items: nil)
+        return ListRecord(name: "", description: "")
     }
     
     func resetLists() {

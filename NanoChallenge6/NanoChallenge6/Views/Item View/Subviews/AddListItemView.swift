@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct AddListItemView: View {
-    
-    @State var item = ListItem(check: false, image: nil, name: "", description: "", quantity: 6, measurement: .unit)
         
+    @Binding var list: ListRecord
+    
+    @State var item = ListItem(check: false, image: nil, name: "", description: "", quantity: 1, measurement: .unit)
+    
     var body: some View {
         HStack(spacing: 13){
             
@@ -29,10 +31,10 @@ struct AddListItemView: View {
     }
 
 }
-
-struct AddItemView1_Previews: PreviewProvider {
-    static var previews: some View {
-        AddListItemView()
-    }
-    
-}
+//
+//struct AddItemView1_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddListItemView()
+//    }
+//    
+//}

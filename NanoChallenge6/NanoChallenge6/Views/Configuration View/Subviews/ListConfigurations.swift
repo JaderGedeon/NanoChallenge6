@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ListConfigurations: View {
     
-    init(list: ListRecord) {
-        self.list = list
+    init(list: Binding<ListRecord>) {
+        self._list = list
+        self._draftList = State(initialValue: list.wrappedValue)
         UITextView.appearance().backgroundColor = .clear
     }
     
-    @State var list: ListRecord
+    @Binding var list: ListRecord
+    @State var draftList: ListRecord
     
     var body: some View {
         
@@ -25,7 +27,7 @@ struct ListConfigurations: View {
                 .frame(width: 183, height: 183, alignment: .center)
                 .cornerRadius(15)
             
-            TextField("Nome", text: $list.name)
+            TextField("Nome", text: $draftList.name)
                 .padding(.all)
                 .frame(width: .infinity, height: 40, alignment: .center)
                 .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Color("textFieldBackground")))
@@ -36,7 +38,7 @@ struct ListConfigurations: View {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .fill(Color("textFieldBackground"))
    
-                TextEditor(text: $list.description)
+                TextEditor(text: $draftList.description)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 3)
                 
@@ -52,11 +54,14 @@ struct ListConfigurations: View {
             
         }
         .padding()
+        .onDisappear(perform: {
+            self._list.wrappedValue = draftList
+        })
     }
 }
-
-struct ListConfiguration_Previews: PreviewProvider {
-    static var previews: some View {
-        ListConfigurations(list: ListRecord(name: "", description: ""))
-    }
-}
+//
+//struct ListConfiguration_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListConfigurations(list: ListRecord(name: "", description: ""))
+//    }
+//}

@@ -13,7 +13,13 @@ struct ListRecord: Equatable {
     var name: String
     var description: String
     
-    var items: [ListItem]?
+    var items: [ListItem]
+    
+    init(name: String, description: String) {
+        items = [ListItem]()
+        self.name = name
+        self.description = description
+    }
     
     static func == (lhs: ListRecord, rhs: ListRecord) -> Bool {
         return lhs.name == rhs.name && lhs.description == rhs.description

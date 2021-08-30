@@ -22,7 +22,7 @@ struct ConfigurationView: View {
                 
                 VStack{
                     ConfigurationHeader()
-                    ListConfigurations(list: list)
+                    ListConfigurations(list: $list)
                 }
                 
                 Section(header:
@@ -49,14 +49,6 @@ struct ConfigurationView: View {
             }
         }
         .navigationBarTitle("", displayMode: .inline)
-        .navigationBarItems(
-            trailing:
-                Button(action: { print("add") },
-                       label: {
-                        Text("Add")
-                            .bold()
-                            .foregroundColor(Color("primary"))
-        }))
         
     }
 }

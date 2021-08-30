@@ -20,7 +20,7 @@ struct AddListView: View {
     var body: some View {
         ScrollView {
             ListFormHeaderView(list: $list)
-            AddListItemView()
+            AddListItemView(list: $list)
             
         }// scroll
         .navigationBarTitle("", displayMode: .inline)
