@@ -18,24 +18,31 @@ class GerenciadorLista: ObservableObject {
     func pegarListas() {
         cloudKitManager.buscarLista { [self] listasNuvem in
             for lista in listasNuvem {
-                var nome = lista.value(forKey: "nome")
-                var descricao = lista.value(forKey: "descricao")
+                let nome = lista.value(forKey: "nome")
+                let descricao = lista.value(forKey: "descricao")
                 
                 var listaNova = Lista(nome: nome as! String, descricao: descricao as? String ?? "Descrição")
                 listaNova.id = lista.recordID
                 
                 if !listas.contains(listaNova) {
                     listas.append(listaNova)
+                    print("appending \(listaNova.nome)")
                 }
             }
         }
     }
     
     func adicionarLista(lista: Lista) {
-        cloudKitManager.salvarLista(lista: lista)
+        var listaAdicionada = Lista(id: nil, nome: lista.nome, descricao: lista.descricao)
+        cloudKitManager.salvarLista(lista: lista) { [self] registro in
+            listaAdicionada.id = registro.recordID
+            listas.append(listaAdicionada)
+        }
     }
     
     func deletarLista(lista: Lista) {
-        cloudKitManager.deletarLista(id: lista.id!)
+        if let id = lista.id {
+            cloudKitManager.deletarLista(id: id)
+        }
     }
 }

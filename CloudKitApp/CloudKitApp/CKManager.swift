@@ -41,14 +41,16 @@ class CKManager {
         container.add(operacao)
     }
     
-    func salvarLista(lista: Lista) {
+    func salvarLista(lista: Lista, completado: @escaping (CKRecord) -> ()) {
         
         let registroLista = CKRecord(recordType: "Lista")
         
         registroLista["nome"] = lista.nome
         registroLista["descricao"] = lista.descricao
-        
-        container.save(registroLista, completionHandler: {( registro, error ) in })
+
+        container.save(registroLista, completionHandler: {( registro, error ) in
+            completado(registro!)
+        })
     }
     
     func deletarLista(id : CKRecord.ID) {
