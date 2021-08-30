@@ -16,10 +16,7 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(listas, id: \.self) { lista in
-                        NavigationLink(
-                            destination: ListDetailView(lista: lista)) {
                             Text(lista)
-                        }
                     }
                     .onDelete(perform: delete)
                 }
