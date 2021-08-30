@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16E3698126DD4B3F00437E36 /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E3698026DD4B3E00437E36 /* CKManager.swift */; };
 		850CA3E926DD146800988BE6 /* ListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA3E826DD146800988BE6 /* ListFormView.swift */; };
 		850CA3EB26DD1C4A00988BE6 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA3EA26DD1C4A00988BE6 /* ItemFormView.swift */; };
 		85C45EB726DA9CFC005AE775 /* CloudKitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16E3698026DD4B3E00437E36 /* CKManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
 		850CA3E826DD146800988BE6 /* ListFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormView.swift; sourceTree = "<group>"; };
 		850CA3EA26DD1C4A00988BE6 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		85C45EB326DA9CFC005AE775 /* CloudKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +65,7 @@
 				85C45EC526DA9F15005AE775 /* ListDetailView.swift */,
 				850CA3E826DD146800988BE6 /* ListFormView.swift */,
 				850CA3EA26DD1C4A00988BE6 /* ItemFormView.swift */,
+				16E3698026DD4B3E00437E36 /* CKManager.swift */,
 				85C45EBA26DA9CFE005AE775 /* Assets.xcassets */,
 				85C45EBF26DA9CFE005AE775 /* Info.plist */,
 				85C45EBC26DA9CFE005AE775 /* Preview Content */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				850CA3E926DD146800988BE6 /* ListFormView.swift in Sources */,
+				16E3698126DD4B3F00437E36 /* CKManager.swift in Sources */,
 				85C45EC626DA9F15005AE775 /* ListDetailView.swift in Sources */,
 				85C45EB926DA9CFC005AE775 /* ContentView.swift in Sources */,
 				85C45EB726DA9CFC005AE775 /* CloudKitAppApp.swift in Sources */,
