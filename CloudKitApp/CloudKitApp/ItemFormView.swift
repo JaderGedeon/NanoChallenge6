@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct Item {
-    var nome: String
-}
-
 struct ItemFormView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var item: Item
+    @EnvironmentObject var gerenciadorLista: ListManager
+    
+    var lista: Lista
+    
+    @State var item: Item = Item(nome: "")
     
     var body: some View {
         NavigationView {
@@ -31,15 +31,20 @@ struct ItemFormView: View {
                 Text("Cancelar").font(.body)
             }),
                 trailing: Button("Adicionar") {
-                    print("adicionar")
+                    adicionarItem()
                 }
             )
         }
     }
-}
-
-struct ItemFormView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemFormView(item: Item(nome: ""))
+    
+    func adicionarItem() {
+        gerenciadorLista.salvarItem(item: item, lista: lista)
+        gerenciadorLista.pegarListas()
     }
 }
+
+//struct ItemFormView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ItemFormView(item: Item(nome: ""))
+//    }
+//}

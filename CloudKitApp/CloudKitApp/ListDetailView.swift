@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ListDetailView: View {
-    var lista: String
+    var lista: Lista
     @State var itens = ["Arroz", "Lentilha", "Abobrinha", "Alface"]
     @State private var showItemForm = false
+    
+    @EnvironmentObject var gerenciadorLista: ListManager
     
     var body: some View {
         VStack {
             List {
-                ForEach(itens, id: \.self) { item in
-                    Text(item)
+                ForEach(lista.itens, id: \.self) { item in
+                    Text(item.nome)
                 }
                 .onDelete(perform: delete)
             }
@@ -26,9 +28,9 @@ struct ListDetailView: View {
             }
         }
         .sheet(isPresented: $showItemForm, content: {
-            ItemFormView(item: Item(nome: ""))
+            ItemFormView(lista: lista)
         })
-        .navigationTitle(lista)
+        .navigationTitle(lista.nome)
         .toolbar {
             EditButton()
         }
@@ -41,6 +43,6 @@ struct ListDetailView: View {
 
 struct ListDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ListDetailView(lista: "Mercado")
+        ListDetailView(lista: Lista(nome: "Mercado", descricao: "lista de mercado"))
     }
 }

@@ -7,14 +7,11 @@
 
 import SwiftUI
 
-struct Lista {
-    var nome: String
-    var descricao: String
-}
-
 struct ListFormView: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var lista: Lista
+    @EnvironmentObject var gerenciadorLista: ListManager
+    
+    @State var lista = Lista(nome: "", descricao: "")
     
     var body: some View {
         NavigationView {
@@ -34,9 +31,15 @@ struct ListFormView: View {
             .navigationBarItems(leading: Button(action: { presentationMode.wrappedValue.dismiss() }, label: {
                 Text("Cancelar").font(.body)
             }), trailing: Button("Adicionar") {
-                print("nome da lista: \(lista.nome)")
+                salvarLista()
             })
         }
+    }
+    
+    func salvarLista() {
+        print("nome da lista: \(lista.nome)")
+        gerenciadorLista.salvarLista(lista: lista)
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

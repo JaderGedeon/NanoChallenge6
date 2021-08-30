@@ -17,7 +17,7 @@ class CKManager {
     
     private init() {}
     
-    let container = CKContainer(identifier: "iCloud.testezinhobacanaeshow").publicCloudDatabase
+    let container = CKContainer(identifier: "iCloud.CloudKitAppExampIe").publicCloudDatabase
     
     // MARK: teste fetch do container do CloudKit
     func fetchList(completion: @escaping ( [CKRecord] ) -> () ) {
@@ -44,8 +44,8 @@ class CKManager {
     func saveList(list: Lista) {
         
         let listRecordObject = CKRecord(recordType: "Lista")
-        //listRecordObject["name"] = list.name
-        //listRecordObject["description"] = list.description
+        listRecordObject["nome"] = list.nome
+        listRecordObject["descricao"] = list.descricao
         
         container.save(listRecordObject, completionHandler: { (record, error) in } )
 
@@ -60,7 +60,7 @@ class CKManager {
     func fetchItems(listParent: CKRecord.ID, completion: @escaping ( [CKRecord] ) -> () ) {
         
         let reference = CKRecord.Reference(recordID: listParent, action: .none)
-        let predicate = NSPredicate(format: "listParent == %@", reference)
+        let predicate = NSPredicate(format: "listaPai == %@", reference)
         let query = CKQuery(recordType: "Item", predicate: predicate)
         let operation = CKQueryOperation(query: query)
         
