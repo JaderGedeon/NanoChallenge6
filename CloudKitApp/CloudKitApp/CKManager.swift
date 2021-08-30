@@ -58,7 +58,7 @@ class CKManager {
     }
     
     func fetchItems(listParent: CKRecord.ID, completion: @escaping ( [CKRecord] ) -> () ) {
-        
+        print("FETCHING ITEM")
         let reference = CKRecord.Reference(recordID: listParent, action: .none)
         let predicate = NSPredicate(format: "listaPai == %@", reference)
         let query = CKQuery(recordType: "Item", predicate: predicate)
@@ -81,12 +81,11 @@ class CKManager {
         
         let listRecordObject = CKRecord(recordType: "Item")
         
-//        listRecordObject["name"] = item.name
-//        listRecordObject["description"] = item.description
+        listRecordObject["nome"] = item.nome
 //        listRecordObject["quantity"] = item.quantity
 //        listRecordObject["measurement"] = item.measurement.rawValue
 //        listRecordObject["check"] = item.check ? 1 : 0
-//        listRecordObject["listParent"] = CKRecord.Reference(recordID: listParentID, action: .deleteSelf)
+        listRecordObject["listaPai"] = CKRecord.Reference(recordID: listParentID, action: .deleteSelf)
 
         container.save(listRecordObject, completionHandler: { (record, error) in print(error ?? "de buenas") } )
 

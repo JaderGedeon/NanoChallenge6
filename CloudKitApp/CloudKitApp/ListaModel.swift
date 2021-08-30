@@ -20,5 +20,5 @@ struct Lista: Equatable, Hashable {
 
 struct Item: Hashable {
     var nome: String
-    var listaPai: String
+    var listaPai: CKRecord.Reference?
 }

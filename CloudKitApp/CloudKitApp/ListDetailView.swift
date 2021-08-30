@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ListDetailView: View {
     var lista: Lista
-    @State var itens = ["Arroz", "Lentilha", "Abobrinha", "Alface"]
+    
+    @State var itens = [Item]()
     @State private var showItemForm = false
     
     @EnvironmentObject var gerenciadorLista: ListManager
@@ -17,7 +18,7 @@ struct ListDetailView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(lista.itens, id: \.self) { item in
+                ForEach(itens, id: \.self) { item in
                     Text(item.nome)
                 }
                 .onDelete(perform: delete)
@@ -34,6 +35,9 @@ struct ListDetailView: View {
         .toolbar {
             EditButton()
         }
+        .onAppear(perform: {
+            itens = gerenciadorLista.pegarItem(lista: lista)
+        })
     }
     
     func delete(at offsets: IndexSet) {
@@ -41,8 +45,8 @@ struct ListDetailView: View {
     }
 }
 
-struct ListDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListDetailView(lista: Lista(nome: "Mercado", descricao: "lista de mercado"))
-    }
-}
+//struct ListDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListDetailView(lista: Lista(nome: "Mercado", descricao: "lista de mercado"))
+//    }
+//}

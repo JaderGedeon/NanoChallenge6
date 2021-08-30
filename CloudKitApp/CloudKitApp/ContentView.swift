@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var gerenciadorListas: ListManager
     
-    @State private var listas = ["Almoço vegano", "Mercado mês", "Pizza"]
     @State private var showListForm = false
     
     var body: some View {
@@ -40,6 +39,7 @@ struct ContentView: View {
             }
             .onAppear(perform: {
                 gerenciadorListas.pegarListas()
+//                gerenciadorListas.pegarTodosItens()
             })
         }
         .navigationViewStyle(StackNavigationViewStyle())

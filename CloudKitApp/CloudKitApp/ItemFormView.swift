@@ -38,8 +38,11 @@ struct ItemFormView: View {
     }
     
     func adicionarItem() {
+        print(item.nome)
         gerenciadorLista.salvarItem(item: item, lista: lista)
         gerenciadorLista.pegarListas()
+//        gerenciadorLista.pegarTodosItens()
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
