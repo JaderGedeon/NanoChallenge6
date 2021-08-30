@@ -99,6 +99,23 @@ class ListManager: ObservableObject, Equatable {
         }
     }
     
+    func fetchListItems() {
+        print("fetching items")
+        for i in 0..<allLists.count {
+            cloudKitManager.fetchItems(listParent: allLists[i].id!) { [self] (listItem) in
+                parseItemList(i: i, items: listItem)
+            }
+        }
+    }
+    
+    func parseItemList(i: Int, items: [CKRecord]) {
+        print("parsing items")
+        for record in items {
+            let item = ListItem(check: false, name: record.value(forKey: "name") as! String, description: record.value(forKey: "description") as! String, quantity: record.value(forKey: "quantity") as! Int, measurement: .unit)
+            allLists[i].items.append(item)
+        }
+    }
+    
     static func == (lhs: ListManager, rhs: ListManager) -> Bool {
         return lhs.allLists == rhs.allLists && lhs.individualList == rhs.individualList && lhs.sharedList == rhs.sharedList
     }

@@ -13,6 +13,7 @@ struct ListView: View {
     @State private var showingConfigurationView = false
     
     @Binding var list: ListRecord
+    @EnvironmentObject var listManager: ListManager
     
     init(list: Binding<ListRecord>) {
         self._list = list
@@ -52,12 +53,14 @@ struct ListView: View {
                     .font(.system(size: CGFloat(20)))
             }
         )
+        .onAppear(perform: {
+            listManager.fetchListItems()
+        })
     }
     
-    func populateItems() {
-        list.items = [ListItem]()
-        var item = ListItem(check: false, name: "macarrão", description: "da dona benta", quantity: 1, measurement: UnitMeasurement.unit)
-        list.items.append(item)
+
+    func addNewItem() {
+        list.items.append(ListItem(check: false, name: "", description: "", quantity: 1, measurement: UnitMeasurement.unit))
     }
     
     func setNavigationAppearance() {
