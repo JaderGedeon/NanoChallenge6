@@ -17,14 +17,12 @@ class CKManager {
     
     private init() {}
     
-    //iCloud.testezinhobacanaeshow
-    //iCloud.Nano6
     let container = CKContainer(identifier: "iCloud.testezinhobacanaeshow").publicCloudDatabase
     
     // MARK: teste fetch do container do CloudKit
     func fetchList(completion: @escaping ( [CKRecord] ) -> () ) {
         
-        let query = CKQuery(recordType: "Lists", predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: "Lista", predicate: NSPredicate(value: true))
         let operation = CKQueryOperation(query: query)
         
         var itemRecords: [CKRecord] = []
@@ -43,11 +41,11 @@ class CKManager {
     }
     
     // MARK: teste save do CKRecord no CloudKit
-    func saveList(list: ListRecord) {
+    func saveList(list: Lista) {
         
-        let listRecordObject = CKRecord(recordType: "Lists")
-        listRecordObject["name"] = list.name
-        listRecordObject["description"] = list.description
+        let listRecordObject = CKRecord(recordType: "Lista")
+        //listRecordObject["name"] = list.name
+        //listRecordObject["description"] = list.description
         
         container.save(listRecordObject, completionHandler: { (record, error) in } )
 
@@ -79,16 +77,16 @@ class CKManager {
         container.add(operation)
     }
     
-    func saveItem(item: ListItem, listParentID: CKRecord.ID) {
+    func saveItem(item: Item, listParentID: CKRecord.ID) {
         
         let listRecordObject = CKRecord(recordType: "Item")
         
-        listRecordObject["name"] = item.name
-        listRecordObject["description"] = item.description
-        listRecordObject["quantity"] = item.quantity
-        listRecordObject["measurement"] = item.measurement.rawValue
-        listRecordObject["check"] = item.check ? 1 : 0
-        listRecordObject["listParent"] = CKRecord.Reference(recordID: listParentID, action: .deleteSelf)
+//        listRecordObject["name"] = item.name
+//        listRecordObject["description"] = item.description
+//        listRecordObject["quantity"] = item.quantity
+//        listRecordObject["measurement"] = item.measurement.rawValue
+//        listRecordObject["check"] = item.check ? 1 : 0
+//        listRecordObject["listParent"] = CKRecord.Reference(recordID: listParentID, action: .deleteSelf)
 
         container.save(listRecordObject, completionHandler: { (record, error) in print(error ?? "de buenas") } )
 
