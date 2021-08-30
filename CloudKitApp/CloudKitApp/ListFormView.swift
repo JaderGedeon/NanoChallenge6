@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-struct Lista {
-    var nome: String
-    var descricao: String
-}
-
 struct ListFormView: View {
     @Environment(\.presentationMode) var presentationMode
+    
+    @EnvironmentObject var gerenciadorLista: GerenciadorLista
     @State var lista: Lista
     
     var body: some View {
@@ -34,9 +31,14 @@ struct ListFormView: View {
             .navigationBarItems(leading: Button(action: { presentationMode.wrappedValue.dismiss() }, label: {
                 Text("Cancelar").font(.body)
             }), trailing: Button("Adicionar") {
-                print("nome da lista: \(lista.nome)")
+                adicionarLista()
             })
         }
+    }
+    
+    func adicionarLista() {
+        gerenciadorLista.adicionarLista(lista: lista)
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

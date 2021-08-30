@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var listas = ["Almoço vegano", "Mercado mês", "Pizza"]
+    @EnvironmentObject var gerenciadorLista: GerenciadorLista
+    
+    
     @State private var showListForm = false
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(listas, id: \.self) { lista in
-                            Text(lista)
+                    ForEach(gerenciadorLista.listas, id: \.self) { lista in
+                        Text(lista.nome)
                     }
                     .onDelete(perform: delete)
                 }
@@ -35,11 +37,15 @@ struct ContentView: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: {
+            gerenciadorLista.pegarListas()
+        })
     }
     
     func delete(at offsets: IndexSet) {
         print("delete")
-        listas.remove(atOffsets: offsets)
+        gerenciadorLista.deletarLista(lista: gerenciadorLista.listas[offsets.first!])
+        gerenciadorLista.listas.remove(atOffsets: offsets)
     }
 }
 

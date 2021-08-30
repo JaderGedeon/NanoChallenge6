@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		850CA3E926DD146800988BE6 /* ListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA3E826DD146800988BE6 /* ListFormView.swift */; };
+		850CA46326DD6E2300988BE6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 850CA46226DD6E2300988BE6 /* CloudKit.framework */; };
+		850CA46526DD6EA200988BE6 /* CKManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA46426DD6EA200988BE6 /* CKManager.swift */; };
+		850CA46926DD708B00988BE6 /* GerenciadorLista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA46826DD708B00988BE6 /* GerenciadorLista.swift */; };
+		850CA46B26DD70B100988BE6 /* Lista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA46A26DD70B100988BE6 /* Lista.swift */; };
 		85C45EB726DA9CFC005AE775 /* CloudKitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */; };
 		85C45EB926DA9CFC005AE775 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C45EB826DA9CFC005AE775 /* ContentView.swift */; };
 		85C45EBB26DA9CFE005AE775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C45EBA26DA9CFE005AE775 /* Assets.xcassets */; };
@@ -16,6 +20,11 @@
 
 /* Begin PBXFileReference section */
 		850CA3E826DD146800988BE6 /* ListFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormView.swift; sourceTree = "<group>"; };
+		850CA46026DD6E1F00988BE6 /* CloudKitApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudKitApp.entitlements; sourceTree = "<group>"; };
+		850CA46226DD6E2300988BE6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		850CA46426DD6EA200988BE6 /* CKManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKManager.swift; sourceTree = "<group>"; };
+		850CA46826DD708B00988BE6 /* GerenciadorLista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerenciadorLista.swift; sourceTree = "<group>"; };
+		850CA46A26DD70B100988BE6 /* Lista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lista.swift; sourceTree = "<group>"; };
 		85C45EB326DA9CFC005AE775 /* CloudKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitAppApp.swift; sourceTree = "<group>"; };
 		85C45EB826DA9CFC005AE775 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,17 +38,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850CA46326DD6E2300988BE6 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		850CA46126DD6E2300988BE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				850CA46226DD6E2300988BE6 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		85C45EAA26DA9CFC005AE775 = {
 			isa = PBXGroup;
 			children = (
 				85C45EB526DA9CFC005AE775 /* CloudKitApp */,
 				85C45EB426DA9CFC005AE775 /* Products */,
+				850CA46126DD6E2300988BE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +73,16 @@
 		85C45EB526DA9CFC005AE775 /* CloudKitApp */ = {
 			isa = PBXGroup;
 			children = (
+				850CA46026DD6E1F00988BE6 /* CloudKitApp.entitlements */,
 				85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */,
 				85C45EB826DA9CFC005AE775 /* ContentView.swift */,
 				850CA3E826DD146800988BE6 /* ListFormView.swift */,
 				85C45EBA26DA9CFE005AE775 /* Assets.xcassets */,
 				85C45EBF26DA9CFE005AE775 /* Info.plist */,
 				85C45EBC26DA9CFE005AE775 /* Preview Content */,
+				850CA46426DD6EA200988BE6 /* CKManager.swift */,
+				850CA46826DD708B00988BE6 /* GerenciadorLista.swift */,
+				850CA46A26DD70B100988BE6 /* Lista.swift */,
 			);
 			path = CloudKitApp;
 			sourceTree = "<group>";
@@ -142,8 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				850CA3E926DD146800988BE6 /* ListFormView.swift in Sources */,
+				850CA46926DD708B00988BE6 /* GerenciadorLista.swift in Sources */,
 				85C45EB926DA9CFC005AE775 /* ContentView.swift in Sources */,
 				85C45EB726DA9CFC005AE775 /* CloudKitAppApp.swift in Sources */,
+				850CA46526DD6EA200988BE6 /* CKManager.swift in Sources */,
+				850CA46B26DD70B100988BE6 /* Lista.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudKitApp/CloudKitApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CloudKitApp/Preview Content\"";
 				DEVELOPMENT_TEAM = CFSW3AA3PQ;
@@ -293,6 +320,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CloudKitApp/CloudKitApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CloudKitApp/Preview Content\"";
 				DEVELOPMENT_TEAM = CFSW3AA3PQ;
