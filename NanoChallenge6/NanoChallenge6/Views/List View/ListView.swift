@@ -30,7 +30,7 @@ struct ListView: View {
             
             LazyVStack() {
                 if !list.items.isEmpty {
-                    ForEach(0..<list.items.count) { i in
+                    ForEach(0..<list.items.count, id: \.self) { i in
                         
                         ListItemView(item: list.items[i]).onTapGesture {
                             showingItemDetailView.toggle()
