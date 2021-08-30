@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850CA3E926DD146800988BE6 /* ListFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA3E826DD146800988BE6 /* ListFormView.swift */; };
+		850CA3EB26DD1C4A00988BE6 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850CA3EA26DD1C4A00988BE6 /* ItemFormView.swift */; };
 		85C45EB726DA9CFC005AE775 /* CloudKitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */; };
 		85C45EB926DA9CFC005AE775 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C45EB826DA9CFC005AE775 /* ContentView.swift */; };
 		85C45EBB26DA9CFE005AE775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C45EBA26DA9CFE005AE775 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		850CA3E826DD146800988BE6 /* ListFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormView.swift; sourceTree = "<group>"; };
+		850CA3EA26DD1C4A00988BE6 /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		85C45EB326DA9CFC005AE775 /* CloudKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitAppApp.swift; sourceTree = "<group>"; };
 		85C45EB826DA9CFC005AE775 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,10 +60,12 @@
 			children = (
 				85C45EB626DA9CFC005AE775 /* CloudKitAppApp.swift */,
 				85C45EB826DA9CFC005AE775 /* ContentView.swift */,
+				85C45EC526DA9F15005AE775 /* ListDetailView.swift */,
+				850CA3E826DD146800988BE6 /* ListFormView.swift */,
+				850CA3EA26DD1C4A00988BE6 /* ItemFormView.swift */,
 				85C45EBA26DA9CFE005AE775 /* Assets.xcassets */,
 				85C45EBF26DA9CFE005AE775 /* Info.plist */,
 				85C45EBC26DA9CFE005AE775 /* Preview Content */,
-				85C45EC526DA9F15005AE775 /* ListDetailView.swift */,
 			);
 			path = CloudKitApp;
 			sourceTree = "<group>";
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850CA3E926DD146800988BE6 /* ListFormView.swift in Sources */,
 				85C45EC626DA9F15005AE775 /* ListDetailView.swift in Sources */,
 				85C45EB926DA9CFC005AE775 /* ContentView.swift in Sources */,
 				85C45EB726DA9CFC005AE775 /* CloudKitAppApp.swift in Sources */,
+				850CA3EB26DD1C4A00988BE6 /* ItemFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import SwiftUI
 struct ListDetailView: View {
     var lista: String
     @State var itens = ["Arroz", "Lentilha", "Abobrinha", "Alface"]
+    @State private var showItemForm = false
     
     var body: some View {
         VStack {
@@ -20,13 +21,16 @@ struct ListDetailView: View {
                 .onDelete(perform: delete)
             }
             Spacer()
-            Button(action: { print("adicionar novo item") }, label: {
-                Text("Adicionar item")
-            })
-            .navigationTitle(lista)
-            .toolbar {
-                EditButton()
+            Button("Adicionar item") {
+                showItemForm.toggle()
             }
+        }
+        .sheet(isPresented: $showItemForm, content: {
+            ItemFormView(item: Item(nome: ""))
+        })
+        .navigationTitle(lista)
+        .toolbar {
+            EditButton()
         }
     }
     

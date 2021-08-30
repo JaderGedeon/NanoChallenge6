@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var listas = ["Almoço vegano", "Mercado mês", "Pizza"]
+    @State private var showListForm = false
     
     var body: some View {
         NavigationView {
@@ -19,22 +20,24 @@ struct ContentView: View {
                             destination: ListDetailView(lista: lista)) {
                             Text(lista)
                         }
-
                     }
                     .onDelete(perform: delete)
                 }
-                .listStyle(InsetListStyle())
                 
-                Spacer()
-                Button(action: {print("adicionar nova lista")}, label: {
-                    Text("Adicionar lista")
-                })
+                Button("Adicionar lista") {
+                    showListForm.toggle()
+                }
+                
             }
-            .navigationTitle("Listas ☁️")
+            .sheet(isPresented: $showListForm, content: {
+                ListFormView(lista: Lista(nome: "", descricao: ""))
+            })
+            .navigationBarTitle("Listas ☁️", displayMode: .inline)
             .toolbar {
                 EditButton()
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func delete(at offsets: IndexSet) {
