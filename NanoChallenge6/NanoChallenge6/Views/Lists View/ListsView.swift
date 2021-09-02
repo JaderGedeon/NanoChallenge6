@@ -61,7 +61,7 @@ struct ListsView: View {
 //            .navigationBarTitle("", displayMode: .inline)
         }
         .onAppear(perform: {
-            listManager.fetchList()
+            listManager.fetchLists()
         })
     }
 

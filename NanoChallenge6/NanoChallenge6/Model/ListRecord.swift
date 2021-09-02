@@ -21,25 +21,19 @@ struct ListRecord: Equatable {
         self.description = description
     }
     
+    init(id: CKRecord.ID, name: String, description: String) {
+        self.id = id
+        self.name = name
+        self.description = description
+        
+        items = [ListItem]()
+    }
+    
     static func == (lhs: ListRecord, rhs: ListRecord) -> Bool {
-        return lhs.name == rhs.name && lhs.description == rhs.description
+        return lhs.id == rhs.id
     }
 }
 
-enum UnitMeasurement: String {
-    case unit = "Uni"
-    case millilitre = "mL"
-    case litre = "litros"
-    case gram = "g"
-    case kilogram = "Kg"
-}
 
-struct ListItem: Identifiable {
-    var id = UUID()
-    var check: Bool
-    var image: Image?
-    var name: String
-    var description: String
-    var quantity: Int
-    var measurement: UnitMeasurement
-}
+
+

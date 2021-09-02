@@ -43,13 +43,15 @@ class CKManager {
     }
     
     // MARK: teste save do CKRecord no CloudKit
-    func saveList(list: ListRecord) {
+    func saveList(list: ListRecord, completion: @escaping ( CKRecord ) -> () ) {
         
         let listRecordObject = CKRecord(recordType: "Lists")
         listRecordObject["name"] = list.name
         listRecordObject["description"] = list.description
         
-        container.save(listRecordObject, completionHandler: { (record, error) in } )
+        container.save(listRecordObject, completionHandler: { (record, error) in
+            completion(record!)
+        } )
 
     }
     
