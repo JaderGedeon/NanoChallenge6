@@ -30,16 +30,20 @@ struct ConfigurationView: View {
                         Text("Editar compartilhamento")
                             .frame(maxWidth: .infinity, alignment: .topLeading)
                             .padding()
-                            .background(Color("sectionBackgroundColor"))
-                            .foregroundColor(Color("CorDoBalacobaco"))
+                            .background(Color("systemDivider"))
+                            .foregroundColor(Color("systemText"))
                         Divider()
+                            .background(Color("systemDivider"))
                     }
                         
                 ) {
                     ForEach(emails, id: \.self) { (email: String) in
                         VStack(alignment: .leading, spacing: 15) {
                             Text(email)
+                                .foregroundColor(Color("text"))
                             Divider()
+                                .background(Color("systemDivider"))
+
                         }
                         .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 0))
                     }
@@ -52,15 +56,13 @@ struct ConfigurationView: View {
         
     }
 }
-
+//
 //struct ConfigurationView_Previews: PreviewProvider {
 //
-//    
 //    static var previews: some View {
-//        
-//        ForEach(ColorScheme.allCases, id: \.self) {_ in
-//            ConfigurationView(list: Binding<previewList>)
-//        }
+//
+//        ConfigurationView()
+//            .preferredColorScheme(.dark)
 //    }
 //}
 //

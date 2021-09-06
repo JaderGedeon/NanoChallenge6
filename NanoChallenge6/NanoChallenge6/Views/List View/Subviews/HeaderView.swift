@@ -26,7 +26,7 @@ struct HeaderView: View {
                     .padding(.horizontal)
                     .padding(.vertical, 2)
                     .padding(.bottom, 15)
-                    .foregroundColor(Color("textColor"))
+                    .foregroundColor(Color("text"))
             }
 
             

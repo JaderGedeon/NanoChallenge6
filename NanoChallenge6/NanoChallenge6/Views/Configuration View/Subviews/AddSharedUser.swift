@@ -17,11 +17,11 @@ struct AddSharedUser: View {
                     ZStack {
                         Image(systemName: "circle.fill")
                             .resizable()
-                            .foregroundColor(Color("CinzaMaisEscuro"))
+                            .foregroundColor(Color("systemContainer"))
                         
                         Image(systemName: "plus")
                             .resizable()
-                            .foregroundColor(Color("CorDoBalacobaco"))
+                            .foregroundColor(Color("systemText"))
                             .frame(
                                 width: circle.size.width * 0.40,
                                 height: circle.size.width * 0.40,
@@ -31,6 +31,7 @@ struct AddSharedUser: View {
                 .frame(width: 32, height: 32, alignment: .center)
                 
                 Divider()
+                    .background(Color("systemDivider"))
                 
             }
             .padding(EdgeInsets(top: 12, leading: 20, bottom: 0, trailing: 0))

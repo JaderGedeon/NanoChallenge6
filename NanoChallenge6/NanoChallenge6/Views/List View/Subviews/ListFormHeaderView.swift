@@ -24,7 +24,7 @@ struct ListFormHeaderView: View {
                 .padding(.horizontal)
                 .padding(.vertical, 2)
                 .padding(.bottom, 15)
-                .foregroundColor(Color("textColor"))
+                .foregroundColor(Color("text"))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         

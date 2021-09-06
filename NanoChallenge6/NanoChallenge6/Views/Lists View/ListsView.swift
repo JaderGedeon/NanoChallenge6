@@ -58,16 +58,20 @@ struct ListsView: View {
                 }
             }.padding()
             .navigationBarHidden(true)
+            .background(Color("background"))
+            
 //            .navigationBarTitle("", displayMode: .inline)
         }
         .onAppear(perform: {
             listManager.fetchLists()
         })
+        
     }
+    
 
     func setSegmentedControlAppearance() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(named: "primary")
-        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "secondary")!], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "accent")!], for: .selected)
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(named: "primary")!], for: .normal)
         UISegmentedControl.appearance().backgroundColor = UIColor(named: "secondary")
         UISegmentedControl.appearance().isOpaque = true

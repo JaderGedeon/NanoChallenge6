@@ -30,13 +30,13 @@ struct ListConfigurations: View {
             TextField("Nome", text: $draftList.name)
                 .padding(.all)
                 .frame(width: .infinity, height: 40, alignment: .center)
-                .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Color("textFieldBackground")))
-                .foregroundColor(Color("titleColor"))
+                .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Color("systemContainer")))
+                .foregroundColor(Color("systemText"))
             
             // text editor
             ZStack(alignment: .topLeading){
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .fill(Color("textFieldBackground"))
+                    .fill(Color("systemContainer"))
    
                 TextEditor(text: $draftList.description)
                     .padding(.horizontal, 5)
@@ -44,7 +44,7 @@ struct ListConfigurations: View {
                 
                 if list.description.isEmpty {
                     Text("Description")
-                        .foregroundColor(Color(UIColor.placeholderText))
+                        .foregroundColor(Color("systemText"))
                         .padding(.horizontal, 14)
                         .padding(.vertical, 12)
                 }
