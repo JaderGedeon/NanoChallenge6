@@ -56,6 +56,7 @@ class ListManager: ObservableObject, Equatable {
                 for record in listItems {
                     let item = ListItem(check: false, name: record.value(forKey: "name") as! String, description: record.value(forKey: "description") as! String, quantity: record.value(forKey: "quantity") as! Int, measurement: UnitMeasurement.init(rawValue: record.value(forKey: "unit") as! String) ?? .unit)
                     
+                    print("item added")
                     allLists[i].items.append(item)
 
                 }
@@ -63,7 +64,43 @@ class ListManager: ObservableObject, Equatable {
         }
     }
     
+//    func add(items: [ListItem], to list: ListRecord) {
+//        if let list = allLists.first(where: { list.id == $0.id }) {
+//            for item in items {
+//                print("saving item")
+//                cloudKitManager.saveItem(item: item, listParentID: list.id!) { record in
+//
+//                }
+//            }
+//        }
+//    }
     
+    func add(item: ListItem, to list: ListRecord) {
+        cloudKitManager.saveItem(item: item, listParentID: list.id!) { record in
+            var newItem = ListItem(check: item.check, name: item.name, description: item.description, quantity: item.quantity, measurement: item.measurement)
+            newItem.ckId = record.recordID
+            
+            DispatchQueue.main.async {
+                if let index = self.allLists.firstIndex(where: { $0.id == list.id}) {
+                    self.allLists[index].items.append(newItem)
+                }
+            }
+        }
+    }
+    
+    func fetchItems(from list: ListRecord) {
+        guard let index = allLists.firstIndex(where: {$0.id == list.id} ) else { return }
+        
+        cloudKitManager.fetchItems(listParent: list.id!) { [self] (items) in
+            print("no items")
+            for item in items {
+                let ckItem = ListItem(check: false, name: item.value(forKey: "name") as! String, description: item.value(forKey: "description") as! String, quantity: item.value(forKey: "quantity") as! Int, measurement: UnitMeasurement.init(rawValue: item.value(forKey: "unit") as! String) ?? .unit)
+                print("adding to array")
+                self.allLists[index].items.append(ckItem)
+            }
+        }
+
+    }
 
     
     static func == (lhs: ListManager, rhs: ListManager) -> Bool {

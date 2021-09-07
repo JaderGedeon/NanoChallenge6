@@ -18,12 +18,16 @@ struct CardList: View {
                 .foregroundColor(Color("primary"))
                 .frame(minWidth: 0, idealWidth: 135, maxWidth: .infinity, minHeight: 0, idealHeight: 190, maxHeight: .infinity, alignment: .center)
             VStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill()
-                    .foregroundColor(Color("secondary"))
+                Image("Leite1")
+                    .resizable()
+                    .scaledToFit()
                     .frame(minWidth: 0, idealWidth: 60, maxWidth: 135, minHeight: 0, idealHeight: 110, maxHeight: 190, alignment: .center)
+
                 Text(list.name)
+                    .font(.system(size: 20))
+                    .bold()
                     .padding()
+                    
                     
             }
             .foregroundColor(Color("secondary"))

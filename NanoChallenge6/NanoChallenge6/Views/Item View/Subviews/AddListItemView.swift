@@ -18,9 +18,10 @@ struct AddListItemView: View {
             
             CheckBoxView(marked: item.check)
             
-            TextField("Novo item", text: $item.name)
-                .font(.headline.bold())
+//            TextField("Novo item", text: $item.name)
+//                .font(.headline.bold())
 
+            Text("adicionar item")
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .topLeading)

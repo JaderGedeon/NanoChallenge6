@@ -11,6 +11,7 @@ import CloudKit
 struct ListView: View {
     @State private var showingItemDetailView = false
     @State private var showingConfigurationView = false
+    @State private var showingItemForm = false
     
     @Binding var list: ListRecord
     @EnvironmentObject var listManager: ListManager
@@ -42,7 +43,12 @@ struct ListView: View {
                         
                     }
                 }
-                AddListItemView(list: $list)
+                AddListItemView(list: $list).onTapGesture {
+                    showingItemForm.toggle()
+                }
+                .sheet(isPresented: $showingItemForm, content: {
+                    ItemFormView(list: $list)
+                })
             }
             
         }
@@ -54,8 +60,12 @@ struct ListView: View {
             }
         )
         .onAppear(perform: {
-            listManager.fetchListItems()
+            print("fetching")
+            listManager.fetchItems(from: list)
         })
+//        .onDisappear(perform: {
+//            listManager
+//        })
     }
     
 

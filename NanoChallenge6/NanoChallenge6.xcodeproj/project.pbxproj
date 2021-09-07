@@ -33,6 +33,7 @@
 		85E9C4DD26D6FD4E00582D0C /* ListFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */; };
 		85E9C4DF26D7050F00582D0C /* AddListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E9C4DE26D7050F00582D0C /* AddListItemView.swift */; };
 		85EF76B526E03DD90038B164 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EF76B426E03DD90038B164 /* ListItem.swift */; };
+		85EFF80826E14E2B003A335F /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EFF80726E14E2B003A335F /* ItemFormView.swift */; };
 		85F9F69626DAD6F50054C343 /* ConfigurationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9F69526DAD6F50054C343 /* ConfigurationHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		85E9C4DC26D6FD4E00582D0C /* ListFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFormHeaderView.swift; sourceTree = "<group>"; };
 		85E9C4DE26D7050F00582D0C /* AddListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListItemView.swift; sourceTree = "<group>"; };
 		85EF76B426E03DD90038B164 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		85EFF80726E14E2B003A335F /* ItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		85F9F69526DAD6F50054C343 /* ConfigurationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8569290026D587A200FBD178 /* ItemDetailView.swift */,
+				85EFF80726E14E2B003A335F /* ItemFormView.swift */,
 				8550F18B26D9665C00851178 /* Subviews */,
 			);
 			path = "Item View";
@@ -302,6 +305,7 @@
 				8550F18826D965CA00851178 /* HeaderView.swift in Sources */,
 				85E9C4D826D6E44800582D0C /* ListRecord.swift in Sources */,
 				8550F18D26D9667500851178 /* CheckBoxView.swift in Sources */,
+				85EFF80826E14E2B003A335F /* ItemFormView.swift in Sources */,
 				85C0837726D827E80036B73E /* ListManager.swift in Sources */,
 				85E9C4DA26D6FCF300582D0C /* AddListView.swift in Sources */,
 				854BAF8326DB168E00EEA224 /* AddSharedUser.swift in Sources */,

@@ -9,17 +9,16 @@ import SwiftUI
 
 struct ListConfigurations: View {
     
+    @Binding var list: ListRecord
+    @State var draftList: ListRecord
+    
     init(list: Binding<ListRecord>) {
         self._list = list
         self._draftList = State(initialValue: list.wrappedValue)
         UITextView.appearance().backgroundColor = .clear
     }
     
-    @Binding var list: ListRecord
-    @State var draftList: ListRecord
-    
     var body: some View {
-        
         VStack(spacing: 26.0){
             
             Image("Leite")
@@ -42,7 +41,7 @@ struct ListConfigurations: View {
                     .padding(.horizontal, 5)
                     .padding(.vertical, 3)
                 
-                if list.description.isEmpty {
+                if draftList.description.isEmpty {
                     Text("Description")
                         .foregroundColor(Color(UIColor.placeholderText))
                         .padding(.horizontal, 14)

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ListItem: Identifiable {
     var id = UUID()
+    var ckId : CKRecord.ID?
     var check: Bool
     var image: Image?
     var name: String

@@ -71,17 +71,19 @@ class CKManager {
         var itemRecords: [CKRecord] = []
         
         operation.recordFetchedBlock = { record in
+            print("appending record")
             itemRecords.append(record)
         }
         
         operation.queryCompletionBlock = { cursor, error in
+            print("returnin records")
             completion(itemRecords)
         }
         
         container.add(operation)
     }
     
-    func saveItem(item: ListItem, listParentID: CKRecord.ID) {
+    func saveItem(item: ListItem, listParentID: CKRecord.ID, completion: @escaping (CKRecord) -> ()) {
         
         let listRecordObject = CKRecord(recordType: "Item")
         
@@ -91,8 +93,17 @@ class CKManager {
         listRecordObject["measurement"] = item.measurement.rawValue
         listRecordObject["check"] = item.check ? 1 : 0
         listRecordObject["listParent"] = CKRecord.Reference(recordID: listParentID, action: .deleteSelf)
-
-        container.save(listRecordObject, completionHandler: { (record, error) in print(error ?? "de buenas") } )
+                
+        container.save(listRecordObject, completionHandler: { (record, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print(error); return
+                }
+                
+                guard let record = record else { print("nao tem nada"); return }
+                completion(record)
+            }
+        })
 
     }
     
