@@ -89,13 +89,14 @@ class ListManager: ObservableObject, Equatable {
     }
     
     func fetchItems(from list: ListRecord) {
-        guard let index = allLists.firstIndex(where: {$0.id == list.id} ) else { return }
+        guard let index = allLists.firstIndex(where: {$0.id == list.id} ) else { print("didn't find"); return }
         
-        cloudKitManager.fetchItems(listParent: list.id!) { [self] (items) in
+        cloudKitManager.fetchItems(listParent: list.id!) { [self] (ckItems) in
             print("no items")
-            for item in items {
+            for item in ckItems {
+                print(item)
+                
                 let ckItem = ListItem(check: false, name: item.value(forKey: "name") as! String, description: item.value(forKey: "description") as! String, quantity: item.value(forKey: "quantity") as! Int, measurement: UnitMeasurement.init(rawValue: item.value(forKey: "unit") as! String) ?? .unit)
-                print("adding to array")
                 self.allLists[index].items.append(ckItem)
             }
         }
